@@ -1,4 +1,6 @@
+import 'package:elfc/app/core/shared/colors.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 
 import 'home_controller.dart';
@@ -9,12 +11,38 @@ class HomePage extends GetView<HomeController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Home Page'),
+      resizeToAvoidBottomInset: true,
+      bottomNavigationBar: Obx(
+        () => BottomNavigationBar(
+          currentIndex: controller.indexScreen.value,
+          onTap: (index) => controller.setScreen(index),
+          backgroundColor: AppColors.lightColor,
+          selectedIconTheme: const IconThemeData(size: 30),
+          showUnselectedLabels: true,
+          selectedItemColor: Colors.yellowAccent,
+          items: const [
+            BottomNavigationBarItem(
+              icon: FaIcon(FontAwesomeIcons.house),
+              label: 'Início',
+            ),
+            BottomNavigationBarItem(
+              icon: FaIcon(FontAwesomeIcons.calendarDays),
+              label: 'Agenda',
+            ),
+            BottomNavigationBarItem(
+              icon: FaIcon(FontAwesomeIcons.award),
+              label: 'Pontuação',
+            ),
+            BottomNavigationBarItem(
+              icon: FaIcon(FontAwesomeIcons.solidUser),
+              label: 'Perfil',
+            ),
+          ],
+        ),
       ),
-      body: const SafeArea(
-        child: Center(
-          child: Text('Home Page'),
+      body: SafeArea(
+        child: Obx(
+          () => controller.screens[controller.indexScreen.value],
         ),
       ),
     );

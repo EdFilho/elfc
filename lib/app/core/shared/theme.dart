@@ -19,9 +19,12 @@ abstract class AppTheme {
   static ThemeData darkTheme = ThemeData(
     brightness: brightness,
     primaryColor: AppColors.primaryColor,
-    scaffoldBackgroundColor: AppColors.darkColor,
+    scaffoldBackgroundColor: AppColors.backgroundColor,
     splashColor: Colors.transparent,
     highlightColor: Colors.transparent,
+    appBarTheme: const AppBarTheme(
+      backgroundColor: AppColors.darkColor,
+    ),
     textTheme: TextTheme(
       headline1: appBarTextStyle,
       headline6: defaultText,
