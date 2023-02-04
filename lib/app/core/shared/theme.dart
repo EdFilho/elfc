@@ -15,6 +15,15 @@ TextStyle defaultText = GoogleFonts.roboto(
   color: AppColors.lightColor,
 );
 
+TextStyle headerText = GoogleFonts.roboto(
+  fontSize: 24.0,
+);
+
+TextStyle buttonText = GoogleFonts.roboto(
+  fontSize: 18.0,
+  color: AppColors.lightColor,
+);
+
 abstract class AppTheme {
   static ThemeData darkTheme = ThemeData(
     brightness: brightness,

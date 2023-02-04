@@ -1,6 +1,7 @@
-import 'package:elfc/app/core/configs/app_routes.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
+
+import '../../../core/configs/app_routes.dart';
 
 class SplashController extends GetxController {
   @override
@@ -14,7 +15,7 @@ class SplashController extends GetxController {
 
   Future<void> userVerify() async {
     Future.delayed(const Duration(seconds: 3)).then((_) async {
-      Get.offAndToNamed(Routes.home);
+      Get.offAndToNamed(Routes.login);
     });
   }
 }

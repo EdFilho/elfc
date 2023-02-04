@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import '../../../core/shared/colors.dart';
-import '../../../core/shared/theme.dart';
 
 class CustomTextField extends StatelessWidget {
   final TextEditingController controller;
@@ -38,16 +37,16 @@ class CustomTextField extends StatelessWidget {
           isDense: true,
           suffixIcon: suffixIcon,
           enabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(20.0),
+            borderRadius: BorderRadius.circular(5),
             borderSide: const BorderSide(
               width: 0.5,
-              color: Colors.grey,
+              color: AppColors.lightColor,
             ),
           ),
           focusedBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(20.0),
+            borderRadius: BorderRadius.circular(5),
             borderSide: const BorderSide(
-              width: 1,
+              width: 0.5,
               color: AppColors.lightColor,
             ),
           ),

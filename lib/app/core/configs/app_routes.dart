@@ -1,7 +1,7 @@
-import 'package:elfc/app/ui/pages/auth/login/login_binding.dart';
-import 'package:elfc/app/ui/pages/auth/login/login_page.dart';
 import 'package:get/get.dart';
 
+import '../../ui/pages/auth/login/login_binding.dart';
+import '../../ui/pages/auth/login/login_page.dart';
 import '../../ui/pages/home/home_binding.dart';
 import '../../ui/pages/home/home_page.dart';
 import '../../ui/pages/splash/splash_bindings.dart';

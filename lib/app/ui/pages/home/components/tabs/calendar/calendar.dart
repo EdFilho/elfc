@@ -1,6 +1,7 @@
-import 'package:elfc/app/ui/pages/home/home_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
+import '../../../home_controller.dart';
 
 class CalendarPage extends GetView<HomeController> {
   const CalendarPage({super.key});

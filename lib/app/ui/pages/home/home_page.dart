@@ -1,8 +1,8 @@
-import 'package:elfc/app/core/shared/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 
+import '../../../core/shared/colors.dart';
 import 'home_controller.dart';
 
 class HomePage extends GetView<HomeController> {
@@ -19,7 +19,8 @@ class HomePage extends GetView<HomeController> {
           backgroundColor: AppColors.lightColor,
           selectedIconTheme: const IconThemeData(size: 30),
           showUnselectedLabels: true,
-          selectedItemColor: Colors.yellowAccent,
+          selectedItemColor: AppColors.lightColor,
+          unselectedItemColor: AppColors.darkGrey,
           items: const [
             BottomNavigationBarItem(
               icon: FaIcon(FontAwesomeIcons.house),
