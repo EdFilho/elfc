@@ -57,7 +57,7 @@ class LoginPage extends GetView<LoginController> {
               ),
               const SizedBox(height: 20.0),
               CustomButtom(
-                onTap: () => {},
+                onTap: controller.login,
                 label: 'Login',
               ),
               const SizedBox(height: 15.0),

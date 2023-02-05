@@ -6,8 +6,10 @@ import '../../../core/configs/app_routes.dart';
 class SplashController extends GetxController {
   @override
   Future<void> onInit() async {
-    await SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual,
-        overlays: []);
+    await SystemChrome.setEnabledSystemUIMode(
+      SystemUiMode.manual,
+      overlays: [],
+    );
     await SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
     await userVerify();
     super.onInit();
@@ -15,6 +17,10 @@ class SplashController extends GetxController {
 
   Future<void> userVerify() async {
     Future.delayed(const Duration(seconds: 3)).then((_) async {
+      SystemChrome.setEnabledSystemUIMode(
+        SystemUiMode.manual,
+        overlays: SystemUiOverlay.values,
+      );
       Get.offAndToNamed(Routes.login);
     });
   }

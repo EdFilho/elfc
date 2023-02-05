@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 
 import '../../../core/shared/colors.dart';
@@ -11,11 +10,15 @@ class SplashPage extends GetView<SplashController> {
   @override
   Widget build(BuildContext context) {
     return Container(
+      decoration: const BoxDecoration(
+        color: AppColors.lightColor,
+      ),
       padding: const EdgeInsets.symmetric(horizontal: 40),
-      child: Center(
-        child: SvgPicture.asset(
-          'assets/icons/home.svg',
-          color: AppColors.lightColor,
+      child: const Center(
+        child: Image(
+          image: AssetImage(
+            "assets/images/logo.png",
+          ),
         ),
       ),
     );
