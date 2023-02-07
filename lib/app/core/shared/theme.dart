@@ -3,8 +3,6 @@ import 'package:google_fonts/google_fonts.dart';
 
 import 'colors.dart';
 
-const brightness = Brightness.dark;
-
 TextStyle appBarTextStyle = GoogleFonts.roboto(
   color: AppColors.lightColor,
   fontSize: 20.0,
@@ -17,21 +15,33 @@ TextStyle headerText = GoogleFonts.roboto(
   fontSize: 24.0,
 );
 
-TextStyle buttonText = GoogleFonts.roboto(fontSize: 18.0);
+TextStyle headline4 = GoogleFonts.roboto(
+  fontSize: 24.0,
+  color: AppColors.lightColor,
+);
+
+TextStyle headline2 = GoogleFonts.roboto(
+  fontSize: 20.0,
+);
+
+TextStyle buttonText = GoogleFonts.roboto(fontSize: 22.0);
 
 abstract class AppTheme {
   static ThemeData darkTheme = ThemeData(
-    brightness: brightness,
+    brightness: Brightness.dark,
     primaryColor: AppColors.primaryColor,
     scaffoldBackgroundColor: AppColors.backgroundColor,
-    splashColor: Colors.transparent,
-    highlightColor: Colors.transparent,
+    splashColor: AppColors.primaryColor,
+    highlightColor: AppColors.primaryColor,
     appBarTheme: const AppBarTheme(
       backgroundColor: AppColors.darkColor,
     ),
     textTheme: TextTheme(
       headline1: appBarTextStyle,
+      headline2: headline2,
       headline6: defaultText,
+      headline4: headline4,
+      headline5: headline4,
       bodyText2: defaultText,
     ),
     inputDecorationTheme: InputDecorationTheme(
@@ -51,12 +61,12 @@ abstract class AppTheme {
       ),
     ),
     colorScheme: const ColorScheme(
-      brightness: brightness,
-      background: AppColors.lightColor,
-      onBackground: AppColors.lightColor,
+      brightness: Brightness.dark,
+      background: AppColors.darkColor,
+      onBackground: AppColors.darkColor,
       error: AppColors.errorColor,
       onError: AppColors.errorColor,
-      onPrimary: AppColors.lightColor,
+      onPrimary: AppColors.darkColor,
       onSecondary: AppColors.primaryColor,
       onSurface: AppColors.primaryColor,
       outline: AppColors.primaryColor,
@@ -72,6 +82,7 @@ abstract class AppTheme {
     scaffoldBackgroundColor: AppColors.lightColor,
     splashColor: Colors.transparent,
     highlightColor: Colors.transparent,
+    backgroundColor: AppColors.lightColor,
     appBarTheme: const AppBarTheme(
       backgroundColor: AppColors.lightColor,
     ),
@@ -102,7 +113,7 @@ abstract class AppTheme {
       onBackground: AppColors.darkColor,
       error: AppColors.errorColor,
       onError: AppColors.errorColor,
-      onPrimary: AppColors.darkColor,
+      onPrimary: AppColors.lightColor,
       onSecondary: AppColors.darkColor,
       onSurface: AppColors.darkColor,
       primary: AppColors.darkColor,

@@ -21,7 +21,7 @@ class SplashController extends GetxController {
         SystemUiMode.manual,
         overlays: SystemUiOverlay.values,
       );
-      Get.offAndToNamed(Routes.login);
+      Get.offAndToNamed(Routes.onboarding);
     });
   }
 }

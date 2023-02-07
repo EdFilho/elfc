@@ -1,6 +1,7 @@
-import 'package:elfc/app/core/configs/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
+import '../../../../core/configs/app_routes.dart';
 
 class LoginController extends GetxController {
   Rx<TextEditingController> emailController = TextEditingController().obs;

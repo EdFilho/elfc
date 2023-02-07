@@ -16,6 +16,7 @@ dependencies:
   google_fonts: ^3.0.1
   flare_flutter: ^3.0.2
   flutter_keyboard_visibility: ^5.4.0
+  flutter_localization: ^0.1.10
   flutter_screenutil: ^5.6.0
   flutter_svg: ^1.1.6
   font_awesome_flutter: ^10.3.0

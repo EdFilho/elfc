@@ -22,14 +22,19 @@ class CustomButtom extends StatelessWidget {
   Widget build(BuildContext context) {
     Color buttonColor;
     Color? shadowColor;
+    Color? foregroundColor;
+    Color borderColor = Colors.transparent;
 
     switch (type) {
       case 'confirm':
-        buttonColor = AppColors.lightColor;
+        buttonColor = Get.theme.primaryColor;
+        foregroundColor = Get.theme.backgroundColor;
         break;
-      case 'cancel':
+      case 'seccond':
         buttonColor = Colors.transparent;
         shadowColor = Colors.transparent;
+        borderColor = Get.theme.primaryColor;
+        foregroundColor = Get.theme.primaryColor;
         break;
       case 'delete':
         buttonColor = AppColors.errorColor;
@@ -42,10 +47,14 @@ class CustomButtom extends StatelessWidget {
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
         backgroundColor: buttonColor,
-        foregroundColor: AppColors.darkGrey,
+        foregroundColor: foregroundColor,
         shadowColor: shadowColor,
-        minimumSize: Size(Get.width, 40),
+        minimumSize: Size(Get.width, 54),
         textStyle: buttonText,
+        side: BorderSide(
+          color: borderColor,
+          width: 1,
+        ),
       ),
       onPressed: disable ? null : onTap,
       child: Text(label),
