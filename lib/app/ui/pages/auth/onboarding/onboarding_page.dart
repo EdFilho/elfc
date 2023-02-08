@@ -21,10 +21,12 @@ class OnboardingPage extends GetView<OnboardingController> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const SizedBox(height: 80.0),
-              const Center(
+              Center(
                 child: Image(
                   image: AssetImage(
-                    "assets/images/logo.png",
+                    Get.isDarkMode
+                        ? "assets/images/logo_white.png"
+                        : "assets/images/logo_black.png",
                   ),
                   height: 280,
                 ),

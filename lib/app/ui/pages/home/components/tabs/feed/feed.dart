@@ -1,4 +1,7 @@
+import 'package:elfc/app/ui/pages/home/components/tabs/feed/components/new_post.dart';
+import 'package:elfc/app/ui/pages/home/components/tabs/feed/components/post.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 
 import '../../../home_controller.dart';
@@ -8,9 +11,42 @@ class FeedPage extends GetView<HomeController> {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: SafeArea(
-        child: Text('FeedController'),
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Feed'),
+        leading: Image(
+          image: AssetImage(
+            Get.isDarkMode
+                ? "assets/images/logo_white.png"
+                : "assets/images/logo_black.png",
+          ),
+        ),
+        actions: [
+          SvgPicture.asset(
+            'assets/icons/check_in.svg',
+            color: Get.theme.primaryColor,
+            height: 40,
+          ),
+        ],
+      ),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            const NewPost(),
+            ListView(
+              physics: const NeverScrollableScrollPhysics(),
+              shrinkWrap: true,
+              children: const [
+                Post(),
+                Post(),
+                Post(),
+                Post(),
+                Post(),
+                Post(),
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }

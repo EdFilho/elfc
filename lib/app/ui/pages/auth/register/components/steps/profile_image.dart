@@ -9,7 +9,7 @@ class ProfileImage extends GetView<RegisterController> {
   @override
   Widget build(BuildContext context) {
     return Column(
-      children: [],
+      children: const [],
     );
   }
 }

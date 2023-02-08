@@ -4,7 +4,6 @@ import 'package:google_fonts/google_fonts.dart';
 import 'colors.dart';
 
 TextStyle appBarTextStyle = GoogleFonts.roboto(
-  color: AppColors.lightColor,
   fontSize: 20.0,
   fontWeight: FontWeight.w500,
 );
@@ -17,11 +16,14 @@ TextStyle headerText = GoogleFonts.roboto(
 
 TextStyle headline4 = GoogleFonts.roboto(
   fontSize: 24.0,
-  color: AppColors.lightColor,
 );
 
 TextStyle headline2 = GoogleFonts.roboto(
   fontSize: 20.0,
+);
+
+TextStyle headline3 = GoogleFonts.roboto(
+  fontSize: 16.0,
 );
 
 TextStyle buttonText = GoogleFonts.roboto(fontSize: 22.0);
@@ -30,9 +32,13 @@ abstract class AppTheme {
   static ThemeData darkTheme = ThemeData(
     brightness: Brightness.dark,
     primaryColor: AppColors.primaryColor,
-    scaffoldBackgroundColor: AppColors.backgroundColor,
-    splashColor: AppColors.primaryColor,
-    highlightColor: AppColors.primaryColor,
+    scaffoldBackgroundColor: AppColors.dark2Color,
+    splashColor: Colors.grey[600],
+    highlightColor: Colors.grey[600],
+    cardColor: AppColors.primaryColor,
+    dividerColor: VariableColors().lightShadow.withOpacity(0.22),
+    dialogBackgroundColor: AppColors.darkColor,
+    backgroundColor: AppColors.darkColor,
     appBarTheme: const AppBarTheme(
       backgroundColor: AppColors.darkColor,
     ),
@@ -80,15 +86,21 @@ abstract class AppTheme {
     brightness: Brightness.light,
     primaryColor: AppColors.darkColor,
     scaffoldBackgroundColor: AppColors.lightColor,
-    splashColor: Colors.transparent,
-    highlightColor: Colors.transparent,
+    cardColor: AppColors.light2Color,
+    dialogBackgroundColor: AppColors.light2Color,
+    splashColor: Colors.grey[300],
+    highlightColor: Colors.grey[300],
     backgroundColor: AppColors.lightColor,
     appBarTheme: const AppBarTheme(
       backgroundColor: AppColors.lightColor,
     ),
     textTheme: TextTheme(
       headline1: appBarTextStyle,
+      headline2: headline2,
+      headline3: headline3,
       headline6: defaultText,
+      headline4: headline4,
+      headline5: headline4,
       bodyText2: defaultText,
     ),
     inputDecorationTheme: InputDecorationTheme(
@@ -109,16 +121,16 @@ abstract class AppTheme {
     ),
     colorScheme: const ColorScheme(
       brightness: Brightness.light,
-      background: AppColors.darkColor,
-      onBackground: AppColors.darkColor,
+      background: AppColors.primaryColor,
+      onBackground: AppColors.primaryColor,
       error: AppColors.errorColor,
       onError: AppColors.errorColor,
-      onPrimary: AppColors.lightColor,
+      onPrimary: AppColors.darkColor,
       onSecondary: AppColors.darkColor,
       onSurface: AppColors.darkColor,
       primary: AppColors.darkColor,
       secondary: AppColors.darkColor,
-      surface: AppColors.lightColor,
+      surface: AppColors.darkColor,
     ).copyWith(secondary: AppColors.darkColor),
   );
 }

@@ -15,7 +15,7 @@ class LoginPage extends GetView<LoginController> {
     return Scaffold(
       resizeToAvoidBottomInset: true,
       body: SafeArea(
-        child: Padding(
+        child: SingleChildScrollView(
           padding: const EdgeInsets.symmetric(horizontal: 16),
           child: Column(
             mainAxisSize: MainAxisSize.max,
@@ -31,12 +31,14 @@ class LoginPage extends GetView<LoginController> {
               Center(
                 child: Column(
                   children: [
-                    const Center(
+                    Center(
                       child: Image(
                         image: AssetImage(
-                          "assets/images/logo.png",
+                          Get.isDarkMode
+                              ? "assets/images/logo_white.png"
+                              : "assets/images/logo_black.png",
                         ),
-                        height: 110,
+                        height: 130,
                       ),
                     ),
                     const SizedBox(height: 20.0),

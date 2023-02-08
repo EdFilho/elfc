@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 
-import '../../../core/shared/colors.dart';
 import 'home_controller.dart';
 
 class HomePage extends GetView<HomeController> {
@@ -12,39 +11,58 @@ class HomePage extends GetView<HomeController> {
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: true,
-      bottomNavigationBar: Obx(
-        () => BottomNavigationBar(
-          currentIndex: controller.indexScreen.value,
-          onTap: (index) => controller.setScreen(index),
-          backgroundColor: AppColors.lightColor,
-          selectedIconTheme: const IconThemeData(size: 30),
-          showUnselectedLabels: true,
-          selectedItemColor: AppColors.lightColor,
-          unselectedItemColor: AppColors.darkGrey,
-          items: const [
-            BottomNavigationBarItem(
-              icon: FaIcon(FontAwesomeIcons.house),
-              label: 'Início',
-            ),
-            BottomNavigationBarItem(
-              icon: FaIcon(FontAwesomeIcons.calendarDays),
-              label: 'Agenda',
-            ),
-            BottomNavigationBarItem(
-              icon: FaIcon(FontAwesomeIcons.award),
-              label: 'Pontuação',
-            ),
-            BottomNavigationBarItem(
-              icon: FaIcon(FontAwesomeIcons.solidUser),
-              label: 'Perfil',
+      bottomNavigationBar: Container(
+        decoration: BoxDecoration(
+          boxShadow: <BoxShadow>[
+            BoxShadow(
+              color: Get.theme.dividerColor,
+              blurRadius: 1,
             ),
           ],
         ),
-      ),
-      body: SafeArea(
         child: Obx(
-          () => controller.screens[controller.indexScreen.value],
+          () => BottomNavigationBar(
+            currentIndex: controller.indexScreen.value,
+            onTap: (index) => controller.setScreen(index),
+            selectedIconTheme: const IconThemeData(size: 30),
+            backgroundColor: Get.theme.dialogBackgroundColor,
+            type: BottomNavigationBarType.fixed,
+            showUnselectedLabels: true,
+            items: [
+              BottomNavigationBarItem(
+                icon: SvgPicture.asset(
+                  'assets/icons/home.svg',
+                  color: Get.theme.primaryColor,
+                ),
+                label: 'Home',
+              ),
+              BottomNavigationBarItem(
+                icon: SvgPicture.asset(
+                  'assets/icons/calendar.svg',
+                  color: Get.theme.primaryColor,
+                ),
+                label: 'Agenda',
+              ),
+              BottomNavigationBarItem(
+                icon: SvgPicture.asset(
+                  'assets/icons/medal.svg',
+                  color: Get.theme.primaryColor,
+                ),
+                label: 'Pontuação',
+              ),
+              BottomNavigationBarItem(
+                icon: SvgPicture.asset(
+                  'assets/icons/profile.svg',
+                  color: Get.theme.primaryColor,
+                ),
+                label: 'Perfil',
+              ),
+            ],
+          ),
         ),
+      ),
+      body: Obx(
+        () => controller.screens[controller.indexScreen.value],
       ),
     );
   }

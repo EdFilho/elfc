@@ -28,10 +28,12 @@ class RegisterPage extends GetView<RegisterController> {
               Center(
                 child: Column(
                   children: [
-                    const Center(
+                    Center(
                       child: Image(
                         image: AssetImage(
-                          "assets/images/logo.png",
+                          Get.isDarkMode
+                              ? "assets/images/logo_white.png"
+                              : "assets/images/logo_black.png",
                         ),
                         height: 110,
                       ),
