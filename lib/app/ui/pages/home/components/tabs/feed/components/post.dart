@@ -13,13 +13,13 @@ class Post extends StatelessWidget {
         horizontal: 16,
         vertical: 8,
       ),
-      margin: const EdgeInsets.only(bottom: 8),
+      margin: const EdgeInsets.only(bottom: 16),
       width: Get.width,
       decoration: BoxDecoration(
-        color: Get.theme.dialogBackgroundColor,
+        color: Theme.of(context).backgroundColor,
         boxShadow: [
           BoxShadow(
-            color: Get.theme.dividerColor,
+            color: Theme.of(context).splashColor,
             spreadRadius: 0,
             blurRadius: 1,
           ),
@@ -44,7 +44,7 @@ class Post extends StatelessWidget {
               PopupMenuButton(
                 icon: SvgPicture.asset(
                   'assets/icons/popup_menu.svg',
-                  color: Get.theme.primaryColor,
+                  color: context.theme.primaryColor,
                 ),
                 itemBuilder: (BuildContext context) => <PopupMenuEntry<String>>[
                   const PopupMenuItem<String>(
@@ -76,12 +76,12 @@ class Post extends StatelessWidget {
             children: [
               SvgPicture.asset(
                 'assets/icons/glove_outlined.svg',
-                color: Get.theme.primaryColor,
+                color: context.theme.primaryColor,
               ),
               const SizedBox(width: 8),
               SvgPicture.asset(
                 'assets/icons/chat_outlined.svg',
-                color: Get.theme.primaryColor,
+                color: context.theme.primaryColor,
               ),
             ],
           ),

@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../../../core/shared/colors.dart';
-
 class CustomTextField extends StatelessWidget {
   final TextEditingController controller;
   final String label;
@@ -31,7 +29,6 @@ class CustomTextField extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.only(top: 15),
       child: TextFormField(
-        cursorColor: AppColors.lightColor,
         decoration: InputDecoration(
           labelText: label,
           isDense: true,

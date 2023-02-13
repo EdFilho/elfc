@@ -1,3 +1,4 @@
+import 'package:elfc/app/core/shared/color_schemes.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -31,16 +32,15 @@ TextStyle buttonText = GoogleFonts.roboto(fontSize: 22.0);
 abstract class AppTheme {
   static ThemeData darkTheme = ThemeData(
     brightness: Brightness.dark,
-    primaryColor: AppColors.primaryColor,
-    scaffoldBackgroundColor: AppColors.dark2Color,
+    primaryColor: AppColors.whiteColor,
+    scaffoldBackgroundColor: AppColors.backgroundDarkColor,
     splashColor: Colors.grey[600],
     highlightColor: Colors.grey[600],
-    cardColor: AppColors.primaryColor,
-    dividerColor: VariableColors().lightShadow.withOpacity(0.22),
-    dialogBackgroundColor: AppColors.darkColor,
-    backgroundColor: AppColors.darkColor,
+    cardColor: AppColors.allDarkColor,
+    dialogBackgroundColor: AppColors.softDarkColor,
+    backgroundColor: AppColors.softDarkColor,
     appBarTheme: const AppBarTheme(
-      backgroundColor: AppColors.darkColor,
+      backgroundColor: AppColors.softDarkColor,
     ),
     textTheme: TextTheme(
       headline1: appBarTextStyle,
@@ -55,44 +55,29 @@ abstract class AppTheme {
         borderRadius: BorderRadius.circular(5),
         borderSide: const BorderSide(
           width: 0.5,
-          color: AppColors.lightColor,
         ),
       ),
       focusedBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(5),
         borderSide: const BorderSide(
           width: 0.5,
-          color: AppColors.lightColor,
         ),
       ),
     ),
-    colorScheme: const ColorScheme(
-      brightness: Brightness.dark,
-      background: AppColors.darkColor,
-      onBackground: AppColors.darkColor,
-      error: AppColors.errorColor,
-      onError: AppColors.errorColor,
-      onPrimary: AppColors.darkColor,
-      onSecondary: AppColors.primaryColor,
-      onSurface: AppColors.primaryColor,
-      outline: AppColors.primaryColor,
-      primary: AppColors.primaryColor,
-      secondary: AppColors.primaryColor,
-      surface: AppColors.lightColor,
-    ).copyWith(secondary: AppColors.primaryColor),
+    colorScheme: darkColorScheme,
   );
 
   static ThemeData lightTheme = ThemeData(
     brightness: Brightness.light,
-    primaryColor: AppColors.darkColor,
-    scaffoldBackgroundColor: AppColors.lightColor,
-    cardColor: AppColors.light2Color,
-    dialogBackgroundColor: AppColors.light2Color,
+    primaryColor: AppColors.allDarkColor,
+    scaffoldBackgroundColor: AppColors.whiteColor,
+    cardColor: AppColors.softWhite,
+    dialogBackgroundColor: AppColors.softWhite,
     splashColor: Colors.grey[300],
     highlightColor: Colors.grey[300],
-    backgroundColor: AppColors.lightColor,
+    backgroundColor: AppColors.whiteColor,
     appBarTheme: const AppBarTheme(
-      backgroundColor: AppColors.lightColor,
+      backgroundColor: AppColors.whiteColor,
     ),
     textTheme: TextTheme(
       headline1: appBarTextStyle,
@@ -108,29 +93,15 @@ abstract class AppTheme {
         borderRadius: BorderRadius.circular(5),
         borderSide: const BorderSide(
           width: 0.5,
-          color: AppColors.darkColor,
         ),
       ),
       focusedBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(5),
         borderSide: const BorderSide(
           width: 0.5,
-          color: AppColors.darkColor,
         ),
       ),
     ),
-    colorScheme: const ColorScheme(
-      brightness: Brightness.light,
-      background: AppColors.primaryColor,
-      onBackground: AppColors.primaryColor,
-      error: AppColors.errorColor,
-      onError: AppColors.errorColor,
-      onPrimary: AppColors.darkColor,
-      onSecondary: AppColors.darkColor,
-      onSurface: AppColors.darkColor,
-      primary: AppColors.darkColor,
-      secondary: AppColors.darkColor,
-      surface: AppColors.darkColor,
-    ).copyWith(secondary: AppColors.darkColor),
+    colorScheme: lightColorScheme,
   );
 }

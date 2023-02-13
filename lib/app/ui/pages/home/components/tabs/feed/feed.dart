@@ -16,16 +16,23 @@ class FeedPage extends GetView<HomeController> {
         title: const Text('Feed'),
         leading: Image(
           image: AssetImage(
-            Get.isDarkMode
+            context.isDarkMode
                 ? "assets/images/logo_white.png"
                 : "assets/images/logo_black.png",
           ),
         ),
         actions: [
-          SvgPicture.asset(
-            'assets/icons/check_in.svg',
-            color: Get.theme.primaryColor,
-            height: 40,
+          IconButton(
+            onPressed: () {
+              Get.changeTheme(
+                context.isDarkMode ? ThemeData.light() : ThemeData.dark(),
+              );
+            },
+            icon: SvgPicture.asset(
+              'assets/icons/check_in.svg',
+              color: context.iconColor,
+              height: 40,
+            ),
           ),
         ],
       ),

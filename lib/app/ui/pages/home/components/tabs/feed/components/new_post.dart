@@ -1,8 +1,8 @@
-import 'package:elfc/app/core/shared/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 
+import '../../../../../../../core/shared/theme.dart';
 import '../../../../home_controller.dart';
 
 class NewPost extends GetView<HomeController> {
@@ -20,12 +20,12 @@ class NewPost extends GetView<HomeController> {
         vertical: 10,
       ),
       decoration: BoxDecoration(
-        color: Get.theme.dialogBackgroundColor,
+        color: Theme.of(context).backgroundColor,
         boxShadow: [
           BoxShadow(
-            color: Get.theme.dividerColor,
+            color: Theme.of(context).splashColor,
             spreadRadius: 0,
-            blurRadius: 1,
+            blurRadius: 2,
           ),
         ],
         borderRadius: BorderRadius.circular(5),
@@ -47,7 +47,7 @@ class NewPost extends GetView<HomeController> {
             onPressed: () => {},
             icon: SvgPicture.asset(
               'assets/icons/new_post.svg',
-              color: Get.theme.primaryColor,
+              color: Theme.of(context).primaryColor,
             ),
           )
         ],

@@ -7,9 +7,14 @@ import '../shared/theme.dart';
 import 'app_controller.dart';
 import 'app_routes.dart';
 
-class AppWidget extends StatelessWidget {
+class AppWidget extends StatefulWidget {
   const AppWidget({super.key});
 
+  @override
+  State<AppWidget> createState() => _AppWidgetState();
+}
+
+class _AppWidgetState extends State<AppWidget> {
   @override
   Widget build(BuildContext context) {
     final appController = Get.put(AppController(), permanent: true);
@@ -19,7 +24,7 @@ class AppWidget extends StatelessWidget {
         designSize: const Size(1080, 2160),
         builder: (BuildContext context, child) => GetMaterialApp(
           title: 'ELFC',
-          theme: AppTheme.lightTheme,
+          theme: AppTheme.darkTheme,
           darkTheme: AppTheme.darkTheme,
           themeMode: ThemeMode.system,
           locale: const Locale('pt', 'BR'),

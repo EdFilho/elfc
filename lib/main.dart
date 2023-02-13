@@ -8,5 +8,7 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   FlareCache.doesPrune = false;
   AppController.production = false;
-  runApp(const AppWidget());
+  runApp(
+    const AppWidget(),
+  );
 }

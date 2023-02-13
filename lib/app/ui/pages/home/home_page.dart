@@ -32,28 +32,28 @@ class HomePage extends GetView<HomeController> {
               BottomNavigationBarItem(
                 icon: SvgPicture.asset(
                   'assets/icons/home.svg',
-                  color: Get.theme.primaryColor,
+                  color: Theme.of(context).primaryColor,
                 ),
                 label: 'Home',
               ),
               BottomNavigationBarItem(
                 icon: SvgPicture.asset(
                   'assets/icons/calendar.svg',
-                  color: Get.theme.primaryColor,
+                  color: Theme.of(context).primaryColor,
                 ),
                 label: 'Agenda',
               ),
               BottomNavigationBarItem(
                 icon: SvgPicture.asset(
                   'assets/icons/medal.svg',
-                  color: Get.theme.primaryColor,
+                  color: Theme.of(context).primaryColor,
                 ),
                 label: 'Pontuação',
               ),
               BottomNavigationBarItem(
                 icon: SvgPicture.asset(
                   'assets/icons/profile.svg',
-                  color: Get.theme.primaryColor,
+                  color: Theme.of(context).primaryColor,
                 ),
                 label: 'Perfil',
               ),

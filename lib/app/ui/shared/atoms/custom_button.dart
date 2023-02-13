@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../../core/shared/colors.dart';
 import '../../../core/shared/theme.dart';
 
 class CustomButtom extends StatelessWidget {
@@ -20,24 +19,12 @@ class CustomButtom extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Color buttonColor;
-    Color? shadowColor;
-    Color? foregroundColor;
-    Color borderColor = Colors.transparent;
-
     switch (type) {
       case 'confirm':
-        buttonColor = Get.theme.primaryColor;
-        foregroundColor = Get.theme.backgroundColor;
         break;
       case 'seccond':
-        buttonColor = Colors.transparent;
-        shadowColor = Colors.transparent;
-        borderColor = Get.theme.primaryColor;
-        foregroundColor = Get.theme.primaryColor;
         break;
       case 'delete':
-        buttonColor = AppColors.errorColor;
         break;
       default:
         throw Exception(
@@ -46,13 +33,9 @@ class CustomButtom extends StatelessWidget {
 
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
-        backgroundColor: buttonColor,
-        foregroundColor: foregroundColor,
-        shadowColor: shadowColor,
         minimumSize: Size(Get.width, 54),
         textStyle: buttonText,
-        side: BorderSide(
-          color: borderColor,
+        side: const BorderSide(
           width: 1,
         ),
       ),
