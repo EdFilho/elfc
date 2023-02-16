@@ -19,12 +19,15 @@ class CustomButtom extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Color backgroundColor = context.theme.primaryColor;
     switch (type) {
       case 'confirm':
         break;
       case 'seccond':
+        backgroundColor = context.theme.scaffoldBackgroundColor;
         break;
       case 'delete':
+        backgroundColor = context.theme.colorScheme.error;
         break;
       default:
         throw Exception(
@@ -35,12 +38,21 @@ class CustomButtom extends StatelessWidget {
       style: ElevatedButton.styleFrom(
         minimumSize: Size(Get.width, 54),
         textStyle: buttonText,
-        side: const BorderSide(
-          width: 1,
-        ),
+        backgroundColor: backgroundColor,
+        side: type == "seccond"
+            ? BorderSide(
+                width: 1,
+                color: context.theme.primaryColor,
+              )
+            : null,
       ),
       onPressed: disable ? null : onTap,
-      child: Text(label),
+      child: Text(
+        label,
+        style: defaultText.copyWith(
+          color: type != 'confirm' ? context.theme.primaryColor : null,
+        ),
+      ),
     );
   }
 }

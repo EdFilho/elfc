@@ -24,8 +24,8 @@ class FeedPage extends GetView<HomeController> {
         actions: [
           IconButton(
             onPressed: () {
-              Get.changeTheme(
-                context.isDarkMode ? ThemeData.light() : ThemeData.dark(),
+              Get.changeThemeMode(
+                context.isDarkMode ? ThemeMode.light : ThemeMode.dark,
               );
             },
             icon: SvgPicture.asset(

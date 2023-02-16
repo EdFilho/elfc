@@ -20,7 +20,7 @@ class NewPost extends GetView<HomeController> {
         vertical: 10,
       ),
       decoration: BoxDecoration(
-        color: Theme.of(context).backgroundColor,
+        color: Theme.of(context).colorScheme.background,
         boxShadow: [
           BoxShadow(
             color: Theme.of(context).splashColor,

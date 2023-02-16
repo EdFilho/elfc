@@ -16,7 +16,7 @@ class Post extends StatelessWidget {
       margin: const EdgeInsets.only(bottom: 16),
       width: Get.width,
       decoration: BoxDecoration(
-        color: Theme.of(context).backgroundColor,
+        color: context.theme.colorScheme.background,
         boxShadow: [
           BoxShadow(
             color: Theme.of(context).splashColor,

@@ -24,7 +24,7 @@ class _AppWidgetState extends State<AppWidget> {
         designSize: const Size(1080, 2160),
         builder: (BuildContext context, child) => GetMaterialApp(
           title: 'ELFC',
-          theme: AppTheme.darkTheme,
+          theme: AppTheme.lightTheme,
           darkTheme: AppTheme.darkTheme,
           themeMode: ThemeMode.system,
           locale: const Locale('pt', 'BR'),

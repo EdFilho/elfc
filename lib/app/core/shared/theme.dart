@@ -34,33 +34,32 @@ abstract class AppTheme {
     brightness: Brightness.dark,
     primaryColor: AppColors.whiteColor,
     scaffoldBackgroundColor: AppColors.backgroundDarkColor,
-    splashColor: Colors.grey[600],
-    highlightColor: Colors.grey[600],
     cardColor: AppColors.allDarkColor,
     dialogBackgroundColor: AppColors.softDarkColor,
-    backgroundColor: AppColors.softDarkColor,
     appBarTheme: const AppBarTheme(
       backgroundColor: AppColors.softDarkColor,
     ),
     textTheme: TextTheme(
-      headline1: appBarTextStyle,
-      headline2: headline2,
-      headline6: defaultText,
-      headline4: headline4,
-      headline5: headline4,
-      bodyText2: defaultText,
+      displayLarge: appBarTextStyle,
+      displayMedium: headline2,
+      titleLarge: defaultText,
+      headlineMedium: headline4,
+      headlineSmall: headline4,
+      bodyMedium: defaultText,
     ),
     inputDecorationTheme: InputDecorationTheme(
       enabledBorder: UnderlineInputBorder(
         borderRadius: BorderRadius.circular(5),
         borderSide: const BorderSide(
           width: 0.5,
+          color: AppColors.softWhite,
         ),
       ),
       focusedBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(5),
         borderSide: const BorderSide(
           width: 0.5,
+          color: AppColors.softWhite,
         ),
       ),
     ),
@@ -70,35 +69,39 @@ abstract class AppTheme {
   static ThemeData lightTheme = ThemeData(
     brightness: Brightness.light,
     primaryColor: AppColors.allDarkColor,
-    scaffoldBackgroundColor: AppColors.whiteColor,
-    cardColor: AppColors.softWhite,
+    scaffoldBackgroundColor: AppColors.backgroundWhiteColor,
+    cardColor: AppColors.whiteColor,
     dialogBackgroundColor: AppColors.softWhite,
-    splashColor: Colors.grey[300],
-    highlightColor: Colors.grey[300],
-    backgroundColor: AppColors.whiteColor,
     appBarTheme: const AppBarTheme(
-      backgroundColor: AppColors.whiteColor,
+      backgroundColor: AppColors.softWhite,
+      toolbarTextStyle: TextStyle(
+        color: AppColors.allDarkColor,
+      ),
+      titleTextStyle: TextStyle(
+        color: AppColors.allDarkColor,
+      ),
     ),
     textTheme: TextTheme(
-      headline1: appBarTextStyle,
-      headline2: headline2,
-      headline3: headline3,
-      headline6: defaultText,
-      headline4: headline4,
-      headline5: headline4,
-      bodyText2: defaultText,
+      displayLarge: appBarTextStyle,
+      displayMedium: headline2,
+      titleLarge: defaultText,
+      headlineMedium: headline4,
+      headlineSmall: headline4,
+      bodyMedium: defaultText,
     ),
     inputDecorationTheme: InputDecorationTheme(
       enabledBorder: UnderlineInputBorder(
         borderRadius: BorderRadius.circular(5),
         borderSide: const BorderSide(
           width: 0.5,
+          color: AppColors.softDarkColor,
         ),
       ),
       focusedBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(5),
         borderSide: const BorderSide(
           width: 0.5,
+          color: AppColors.softDarkColor,
         ),
       ),
     ),
