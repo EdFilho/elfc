@@ -1,15 +1,10 @@
 import 'package:get/get.dart';
 
-import '../../ui/pages/auth/login/login_binding.dart';
-import '../../ui/pages/auth/login/login_page.dart';
-import '../../ui/pages/auth/onboarding/onboarding_bindings.dart';
-import '../../ui/pages/auth/onboarding/onboarding_page.dart';
-import '../../ui/pages/auth/register/register_bindings.dart';
-import '../../ui/pages/auth/register/register_page.dart';
-import '../../ui/pages/home/home_binding.dart';
-import '../../ui/pages/home/home_page.dart';
-import '../../ui/pages/splash/splash_bindings.dart';
-import '../../ui/pages/splash/splash_page.dart';
+import '../../ui/pages/auth/login/login.dart';
+import '../../ui/pages/auth/onboarding/onboarding.dart';
+import '../../ui/pages/auth/register/register.dart';
+import '../../ui/pages/home/home.dart';
+import '../../ui/pages/splash/splash.dart';
 import 'app_binding.dart';
 
 abstract class Routes {

@@ -3,7 +3,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
-import '../shared/theme.dart';
+import '../shared/theme/themes.dart';
 import 'app_controller.dart';
 import 'app_routes.dart';
 

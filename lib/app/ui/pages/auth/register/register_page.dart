@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../../../core/shared/theme.dart';
+import '../../../../core/shared/theme/themes.dart';
 import 'register_controller.dart';
 
 class RegisterPage extends GetView<RegisterController> {

@@ -1,10 +1,9 @@
-import 'package:elfc/app/ui/pages/home/components/tabs/feed/components/new_post.dart';
-import 'package:elfc/app/ui/pages/home/components/tabs/feed/components/post.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 
 import '../../../home_controller.dart';
+import 'components/components.dart';
 
 class FeedPage extends GetView<HomeController> {
   const FeedPage({super.key});

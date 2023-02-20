@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../../shared/atoms/custom_button.dart';
+import '../../../shared/components/components.dart';
 import 'onboarding_controller.dart';
 
 class OnboardingPage extends GetView<OnboardingController> {

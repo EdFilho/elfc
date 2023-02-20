@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../../../../../core/shared/theme.dart';
-import '../../../../../shared/atoms/custom_button.dart';
-import '../../../../../shared/atoms/custom_text_field.dart';
+import '../../../../../../core/shared/theme/themes.dart';
+import '../../../../../shared/components/components.dart';
 import '../../register_controller.dart';
 import '../social_signin.dart';
 

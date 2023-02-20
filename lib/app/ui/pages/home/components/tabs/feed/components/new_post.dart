@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 
-import '../../../../../../../core/shared/theme.dart';
+import '../../../../../../../core/shared/theme/themes.dart';
 import '../../../../home_controller.dart';
 
 class NewPost extends GetView<HomeController> {

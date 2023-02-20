@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../../../../shared/atoms/custom_button.dart';
-import '../../../../../shared/atoms/custom_text_field.dart';
+import '../../../../../shared/components/components.dart';
 import '../../register_controller.dart';
 
 class PersonalData extends GetView<RegisterController> {

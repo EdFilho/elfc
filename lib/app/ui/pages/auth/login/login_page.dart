@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../../../core/shared/theme.dart';
-import '../../../shared/atoms/custom_button.dart';
-import '../../../shared/atoms/custom_text_field.dart';
-import 'components/social_login.dart';
+import '../../../../core/shared/theme/themes.dart';
+import '../../../shared/components/components.dart';
+import 'components/components.dart';
 import 'login_controller.dart';
 
 class LoginPage extends GetView<LoginController> {

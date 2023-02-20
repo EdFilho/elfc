@@ -1,4 +1,4 @@
-import 'package:elfc/app/core/shared/colors.dart';
+import 'package:elfc/app/core/shared/colors/colors.dart';
 import 'package:flutter/material.dart';
 
 ColorScheme lightColorScheme = const ColorScheme(
