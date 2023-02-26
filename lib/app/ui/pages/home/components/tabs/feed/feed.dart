@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 
+import '../../../../../shared/components/components.dart';
 import '../../../home_controller.dart';
 import 'components/components.dart';
 
@@ -12,7 +12,6 @@ class FeedPage extends GetView<HomeController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Feed'),
         leading: Image(
           image: AssetImage(
             context.isDarkMode
@@ -22,15 +21,17 @@ class FeedPage extends GetView<HomeController> {
         ),
         actions: [
           IconButton(
-            onPressed: () {
-              Get.changeThemeMode(
-                context.isDarkMode ? ThemeMode.light : ThemeMode.dark,
-              );
-            },
-            icon: SvgPicture.asset(
-              'assets/icons/check_in.svg',
-              color: context.iconColor,
-              height: 40,
+              onPressed: () {
+                Get.changeThemeMode(
+                  context.isDarkMode ? ThemeMode.light : ThemeMode.dark,
+                );
+              },
+              icon: const CustomIcon(icon: "glove_add")),
+          IconButton(
+            onPressed: () {},
+            icon: const CustomIcon(
+              icon: "check_in",
+              size: 40,
             ),
           ),
         ],

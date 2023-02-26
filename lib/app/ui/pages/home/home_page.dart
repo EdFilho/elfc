@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 
+import '../../shared/components/components.dart';
 import 'home_controller.dart';
 
 class HomePage extends GetView<HomeController> {
@@ -25,35 +25,32 @@ class HomePage extends GetView<HomeController> {
             currentIndex: controller.indexScreen.value,
             onTap: (index) => controller.setScreen(index),
             selectedIconTheme: const IconThemeData(size: 30),
-            backgroundColor: Get.theme.dialogBackgroundColor,
+            backgroundColor: Theme.of(context).dialogBackgroundColor,
             type: BottomNavigationBarType.fixed,
             showUnselectedLabels: true,
-            items: [
+            items: const [
               BottomNavigationBarItem(
-                icon: SvgPicture.asset(
-                  'assets/icons/home.svg',
-                  color: Theme.of(context).primaryColor,
-                ),
+                icon: CustomIcon(icon: "home_outlined"),
+                activeIcon: CustomIcon(icon: "home"),
                 label: 'Home',
               ),
               BottomNavigationBarItem(
-                icon: SvgPicture.asset(
-                  'assets/icons/calendar.svg',
-                  color: Theme.of(context).primaryColor,
-                ),
+                icon: CustomIcon(icon: "calendar_outlined"),
+                activeIcon: CustomIcon(icon: "calendar"),
                 label: 'Agenda',
               ),
               BottomNavigationBarItem(
-                icon: SvgPicture.asset(
-                  'assets/icons/medal.svg',
-                  color: Theme.of(context).primaryColor,
-                ),
+                icon: CustomIcon(icon: "medal_outlined"),
+                activeIcon: CustomIcon(icon: "medal"),
                 label: 'Pontuação',
               ),
               BottomNavigationBarItem(
-                icon: SvgPicture.asset(
-                  'assets/icons/profile.svg',
-                  color: Theme.of(context).primaryColor,
+                icon: ImageProfile(
+                  size: 48,
+                ),
+                activeIcon: ImageProfile(
+                  size: 48,
+                  bordered: true,
                 ),
                 label: 'Perfil',
               ),

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../../../core/shared/theme/themes.dart';
 import '../../../shared/components/components.dart';
 import 'components/components.dart';
 import 'login_controller.dart';
@@ -43,7 +42,7 @@ class LoginPage extends GetView<LoginController> {
                     const SizedBox(height: 20.0),
                     Text(
                       'Bem vindo!',
-                      style: headerText,
+                      style: Theme.of(context).textTheme.titleLarge,
                     ),
                   ],
                 ),
@@ -70,7 +69,7 @@ class LoginPage extends GetView<LoginController> {
               Center(
                 child: Text(
                   'Ou',
-                  style: headline2,
+                  style: Theme.of(context).textTheme.titleSmall,
                 ),
               ),
               const SizedBox(height: 32.0),

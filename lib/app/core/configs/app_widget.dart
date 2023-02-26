@@ -26,7 +26,7 @@ class _AppWidgetState extends State<AppWidget> {
           title: 'ELFC',
           theme: AppTheme.lightTheme,
           darkTheme: AppTheme.darkTheme,
-          themeMode: ThemeMode.system,
+          themeMode: ThemeMode.dark,
           locale: const Locale('pt', 'BR'),
           localizationsDelegates: const [
             GlobalMaterialLocalizations.delegate,

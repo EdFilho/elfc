@@ -11,26 +11,37 @@ TextStyle appBarTextStyle = GoogleFonts.roboto(
 
 TextStyle defaultText = GoogleFonts.roboto();
 
-TextStyle headerText = GoogleFonts.roboto(
-  fontSize: 24.0,
+TextStyle bodySmall = GoogleFonts.roboto(
+  fontSize: 10,
 );
 
-TextStyle headline4 = GoogleFonts.roboto(
-  fontSize: 24.0,
+TextStyle bodyMedium = GoogleFonts.roboto(
+  fontSize: 12,
 );
 
-TextStyle headline2 = GoogleFonts.roboto(
-  fontSize: 20.0,
+TextStyle bodyLarge = GoogleFonts.roboto(
+  fontSize: 14,
 );
 
-TextStyle headline3 = GoogleFonts.roboto(
-  fontSize: 16.0,
+TextStyle title = GoogleFonts.roboto(
+  fontSize: 20,
+);
+
+TextStyle titleSmall = GoogleFonts.roboto(
+  fontSize: 16,
+  fontWeight: FontWeight.w600,
+);
+
+TextStyle titleLarge = GoogleFonts.roboto(
+  fontSize: 24,
+  fontWeight: FontWeight.w600,
 );
 
 TextStyle buttonText = GoogleFonts.roboto(fontSize: 22.0);
 
 abstract class AppTheme {
   static ThemeData darkTheme = ThemeData(
+    useMaterial3: true,
     brightness: Brightness.dark,
     primaryColor: AppColors.whiteColor,
     scaffoldBackgroundColor: AppColors.backgroundDarkColor,
@@ -39,13 +50,17 @@ abstract class AppTheme {
     appBarTheme: const AppBarTheme(
       backgroundColor: AppColors.softDarkColor,
     ),
+    iconTheme: const IconThemeData(
+      color: AppColors.whiteColor,
+    ),
     textTheme: TextTheme(
+      titleMedium: title,
+      titleLarge: titleLarge,
+      titleSmall: titleSmall,
+      bodySmall: bodySmall,
+      bodyMedium: bodyMedium,
+      bodyLarge: bodyLarge,
       displayLarge: appBarTextStyle,
-      displayMedium: headline2,
-      titleLarge: defaultText,
-      headlineMedium: headline4,
-      headlineSmall: headline4,
-      bodyMedium: defaultText,
     ),
     inputDecorationTheme: InputDecorationTheme(
       enabledBorder: UnderlineInputBorder(
@@ -54,6 +69,9 @@ abstract class AppTheme {
           width: 0.5,
           color: AppColors.softWhite,
         ),
+      ),
+      labelStyle: const TextStyle(
+        color: AppColors.whiteColor,
       ),
       focusedBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(5),
@@ -67,6 +85,7 @@ abstract class AppTheme {
   );
 
   static ThemeData lightTheme = ThemeData(
+    useMaterial3: true,
     brightness: Brightness.light,
     primaryColor: AppColors.allDarkColor,
     scaffoldBackgroundColor: AppColors.backgroundWhiteColor,
@@ -82,12 +101,13 @@ abstract class AppTheme {
       ),
     ),
     textTheme: TextTheme(
+      titleMedium: title,
+      titleLarge: titleLarge,
+      titleSmall: titleSmall,
+      bodySmall: bodySmall,
+      bodyMedium: bodyMedium,
+      bodyLarge: bodyLarge,
       displayLarge: appBarTextStyle,
-      displayMedium: headline2,
-      titleLarge: defaultText,
-      headlineMedium: headline4,
-      headlineSmall: headline4,
-      bodyMedium: defaultText,
     ),
     inputDecorationTheme: InputDecorationTheme(
       enabledBorder: UnderlineInputBorder(

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../../../core/shared/theme/themes.dart';
 import 'register_controller.dart';
 
 class RegisterPage extends GetView<RegisterController> {
@@ -41,7 +40,7 @@ class RegisterPage extends GetView<RegisterController> {
                     const SizedBox(height: 20.0),
                     Text(
                       'Bem vindo!',
-                      style: headerText,
+                      style: Theme.of(context).textTheme.titleLarge,
                     ),
                     const Text(
                       'Faça sua conta e entre no nosso time!',

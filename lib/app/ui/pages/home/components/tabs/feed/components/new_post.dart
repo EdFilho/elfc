@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 
 import '../../../../../../../core/shared/theme/themes.dart';
+import '../../../../../../shared/components/components.dart';
 import '../../../../home_controller.dart';
 
 class NewPost extends GetView<HomeController> {
@@ -45,10 +45,7 @@ class NewPost extends GetView<HomeController> {
           IconButton(
             padding: EdgeInsets.zero,
             onPressed: () => {},
-            icon: SvgPicture.asset(
-              'assets/icons/new_post.svg',
-              color: Theme.of(context).primaryColor,
-            ),
+            icon: const CustomIcon(icon: "new_post"),
           )
         ],
       ),

@@ -1,7 +1,8 @@
-import 'package:elfc/app/core/shared/theme/themes.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
+
+import '../../../../../../../core/shared/theme/themes.dart';
+import '../../../../../../shared/components/components.dart';
 
 class Post extends StatelessWidget {
   const Post({super.key});
@@ -42,10 +43,7 @@ class Post extends StatelessWidget {
               ),
               const Spacer(),
               PopupMenuButton(
-                icon: SvgPicture.asset(
-                  'assets/icons/popup_menu.svg',
-                  color: context.theme.primaryColor,
-                ),
+                icon: const CustomIcon(icon: "popup_menu"),
                 itemBuilder: (BuildContext context) => <PopupMenuEntry<String>>[
                   const PopupMenuItem<String>(
                     value: 'item',
@@ -73,16 +71,10 @@ class Post extends StatelessWidget {
           ),
           const SizedBox(height: 12),
           Row(
-            children: [
-              SvgPicture.asset(
-                'assets/icons/glove_outlined.svg',
-                color: context.theme.primaryColor,
-              ),
-              const SizedBox(width: 8),
-              SvgPicture.asset(
-                'assets/icons/chat_outlined.svg',
-                color: context.theme.primaryColor,
-              ),
+            children: const [
+              CustomIcon(icon: "glove_outlined"),
+              SizedBox(width: 8),
+              CustomIcon(icon: "chat_outlined"),
             ],
           ),
           const SizedBox(height: 8),

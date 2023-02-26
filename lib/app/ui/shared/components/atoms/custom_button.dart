@@ -5,8 +5,7 @@ import '../../../../core/shared/theme/themes.dart';
 
 class CustomButtom extends StatelessWidget {
   final void Function() onTap;
-  final String label;
-  final String type;
+  final String label, type;
   final bool disable;
 
   const CustomButtom({
@@ -50,7 +49,9 @@ class CustomButtom extends StatelessWidget {
       child: Text(
         label,
         style: defaultText.copyWith(
-          color: type != 'confirm' ? context.theme.primaryColor : null,
+          color: type != 'confirm'
+              ? Theme.of(context).primaryColor
+              : Theme.of(context).colorScheme.onPrimary,
         ),
       ),
     );

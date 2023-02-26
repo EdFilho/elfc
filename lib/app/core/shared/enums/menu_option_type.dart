@@ -1,0 +1,4 @@
+enum MenuOptionType {
+  router,
+  switcher,
+}

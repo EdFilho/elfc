@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../../../../../core/shared/theme/themes.dart';
 import '../../../../../shared/components/components.dart';
 import '../../register_controller.dart';
 import '../social_signin.dart';
@@ -34,7 +33,7 @@ class EmailAndPassword extends GetView<RegisterController> {
         Center(
           child: Text(
             'Ou',
-            style: headline2,
+            style: Theme.of(context).textTheme.titleSmall,
           ),
         ),
         const SizedBox(height: 32.0),

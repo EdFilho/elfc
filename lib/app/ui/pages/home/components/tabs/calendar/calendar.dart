@@ -8,9 +8,13 @@ class CalendarPage extends GetView<HomeController> {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: SafeArea(
-        child: Text('CalendarController'),
+        child: SingleChildScrollView(
+          child: Column(
+            children: const [],
+          ),
+        ),
       ),
     );
   }
