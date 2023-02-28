@@ -29,7 +29,7 @@ ColorScheme lightColorScheme = const ColorScheme(
   onInverseSurface: AppColors.whiteColor,
   inverseSurface: AppColors.allDarkColor,
   inversePrimary: AppColors.allDarkColor,
-  shadow: AppColors.softDarkColor,
+  shadow: AppColors.maskWhite,
   surfaceTint: AppColors.allDarkColor,
 ).copyWith(secondary: AppColors.allDarkColor);
 

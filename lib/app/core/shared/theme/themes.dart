@@ -37,15 +37,13 @@ TextStyle titleLarge = GoogleFonts.roboto(
   fontWeight: FontWeight.w600,
 );
 
-TextStyle buttonText = GoogleFonts.roboto(fontSize: 22.0);
-
 abstract class AppTheme {
   static ThemeData darkTheme = ThemeData(
     useMaterial3: true,
     brightness: Brightness.dark,
     primaryColor: AppColors.whiteColor,
     scaffoldBackgroundColor: AppColors.backgroundDarkColor,
-    cardColor: AppColors.allDarkColor,
+    cardColor: AppColors.softDarkColor,
     dialogBackgroundColor: AppColors.softDarkColor,
     appBarTheme: const AppBarTheme(
       backgroundColor: AppColors.softDarkColor,
@@ -90,7 +88,7 @@ abstract class AppTheme {
     primaryColor: AppColors.allDarkColor,
     scaffoldBackgroundColor: AppColors.backgroundWhiteColor,
     cardColor: AppColors.whiteColor,
-    dialogBackgroundColor: AppColors.softWhite,
+    dialogBackgroundColor: AppColors.whiteColor,
     appBarTheme: const AppBarTheme(
       backgroundColor: AppColors.softWhite,
       toolbarTextStyle: TextStyle(
