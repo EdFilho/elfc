@@ -1,3 +1,4 @@
+import 'package:elfc/app/core/configs/app_routes.dart';
 import 'package:elfc/app/core/shared/enums/menu_option_type.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -32,6 +33,10 @@ class ProfilePage extends GetView<HomeController> {
               ),
               MenuOptions(
                 label: "Editar perfil",
+                onTap: () => Get.toNamed(Routes.editProfile),
+              ),
+              MenuOptions(
+                label: "Informações pessoais",
                 onTap: () => {},
               ),
               MenuOptions(
@@ -56,6 +61,26 @@ class ProfilePage extends GetView<HomeController> {
               ),
               MenuOptions(
                 label: "Notificações",
+                onTap: () => {},
+              ),
+              const SizedBox(height: 16),
+              Padding(
+                padding: const EdgeInsets.only(left: 16, bottom: 16),
+                child: Text(
+                  "Conta",
+                  style: Theme.of(context).textTheme.titleSmall,
+                ),
+              ),
+              MenuOptions(
+                label: "Política e termos",
+                onTap: () => {},
+              ),
+              MenuOptions(
+                label: "FAQ",
+                onTap: () => {},
+              ),
+              MenuOptions(
+                label: "Suporte",
                 onTap: () => {},
               ),
             ],

@@ -52,7 +52,7 @@ class MenuOptions extends StatelessWidget {
           color: Theme.of(context).dialogBackgroundColor,
           border: Border(
             bottom: BorderSide(
-              width: 0.5,
+              width: 0.25,
               color: Theme.of(context).primaryColor,
             ),
           ),
