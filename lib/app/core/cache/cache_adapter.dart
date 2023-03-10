@@ -1,4 +1,7 @@
+import 'package:flutter/material.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
+
+import 'cache_string.dart';
 
 class CacheAdapter {
   FlutterSecureStorage storage = const FlutterSecureStorage();
@@ -18,5 +21,18 @@ class CacheAdapter {
 
   Future<void> clear() async {
     await storage.deleteAll();
+  }
+
+  Future<ThemeMode> getTheme() async {
+    String? theme = await read(CacheString.themeModeKey);
+    print('theme mode => $theme');
+    switch (theme) {
+      case "dark":
+        return ThemeMode.dark;
+      case "light":
+        return ThemeMode.light;
+      default:
+        return ThemeMode.system;
+    }
   }
 }

@@ -7,18 +7,18 @@ class UserCard extends StatelessWidget {
   final String userName, birthDate, createdAt;
 
   const UserCard({
-    super.key,
+    Key? key,
     required this.userName,
     required this.birthDate,
     required this.createdAt,
-  });
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.symmetric(
-        horizontal: 16,
-        vertical: 40,
+        horizontal: 16.0,
+        vertical: 40.0,
       ),
       decoration: BoxDecoration(
         color: Theme.of(context).dialogBackgroundColor,
@@ -64,13 +64,11 @@ class UserCard extends StatelessWidget {
             ],
           ),
           const Spacer(),
-          Image(
-            height: 88,
-            image: AssetImage(
-              context.isDarkMode
-                  ? "assets/images/logo_white.png"
-                  : "assets/images/logo_black.png",
-            ),
+          Image.asset(
+            context.isDarkMode
+                ? "assets/images/logo_white.png"
+                : "assets/images/logo_black.png",
+            height: 88.0,
           ),
         ],
       ),

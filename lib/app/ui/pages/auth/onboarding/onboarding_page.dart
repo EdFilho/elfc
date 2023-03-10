@@ -24,7 +24,7 @@ class OnboardingPage extends GetView<OnboardingController> {
               Center(
                 child: Image(
                   image: AssetImage(
-                    Get.isDarkMode
+                    context.isDarkMode
                         ? "assets/images/logo_white.png"
                         : "assets/images/logo_black.png",
                   ),

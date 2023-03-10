@@ -8,5 +8,6 @@ class HomeBinding implements Bindings {
   void dependencies() {
     Get.lazyPut<HomeController>(() => HomeController());
     Get.lazyPut<CalendarController>(() => CalendarController());
+    Get.lazyPut<ProfileController>(() => ProfileController());
   }
 }
