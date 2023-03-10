@@ -91,12 +91,9 @@ abstract class AppTheme {
     dialogBackgroundColor: AppColors.whiteColor,
     appBarTheme: const AppBarTheme(
       backgroundColor: AppColors.softWhite,
-      toolbarTextStyle: TextStyle(
-        color: AppColors.allDarkColor,
-      ),
-      titleTextStyle: TextStyle(
-        color: AppColors.allDarkColor,
-      ),
+    ),
+    iconTheme: const IconThemeData(
+      color: AppColors.allDarkColor,
     ),
     textTheme: TextTheme(
       titleMedium: title,
@@ -114,6 +111,9 @@ abstract class AppTheme {
           width: 0.5,
           color: AppColors.softDarkColor,
         ),
+      ),
+      labelStyle: const TextStyle(
+        color: AppColors.allDarkColor,
       ),
       focusedBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(5),

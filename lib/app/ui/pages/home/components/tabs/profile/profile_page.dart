@@ -1,10 +1,10 @@
-import 'package:elfc/app/core/configs/app_routes.dart';
-import 'package:elfc/app/core/shared/enums/menu_option_type.dart';
-import 'package:elfc/app/ui/pages/home/components/tabs/tabs.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../../../../../core/configs/app_routes.dart';
+import '../../../../../../core/shared/enums/enums.dart';
 import '../../../../../shared/components/components.dart';
+import '../tabs.dart';
 
 class ProfilePage extends GetView<ProfileController> {
   const ProfilePage({super.key});

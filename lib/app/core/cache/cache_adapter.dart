@@ -25,7 +25,6 @@ class CacheAdapter {
 
   Future<ThemeMode> getTheme() async {
     String? theme = await read(CacheString.themeModeKey);
-    print('theme mode => $theme');
     switch (theme) {
       case "dark":
         return ThemeMode.dark;
