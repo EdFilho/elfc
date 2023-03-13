@@ -8,6 +8,6 @@ class LoginController extends GetxController {
   Rx<TextEditingController> passwordController = TextEditingController().obs;
 
   void login() {
-    Get.offAndToNamed(Routes.home);
+    Get.offAllNamed(Routes.home);
   }
 }

@@ -9,8 +9,6 @@ class EditProfilePage extends GetView<EditProfileController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      resizeToAvoidBottomInset: true,
-      appBar: AppBar(),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(

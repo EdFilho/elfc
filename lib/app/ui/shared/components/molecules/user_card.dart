@@ -18,10 +18,10 @@ class UserCard extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(
         horizontal: 16.0,
-        vertical: 40.0,
+        vertical: 20.0,
       ),
       decoration: BoxDecoration(
-        color: Theme.of(context).dialogBackgroundColor,
+        color: Theme.of(context).colorScheme.onPrimary,
       ),
       child: Row(
         children: [
