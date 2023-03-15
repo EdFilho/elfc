@@ -1,14 +1,10 @@
-import '../../../../../../core/cache/cache.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../../../../../core/configs/app_routes.dart';
+import '../../../core/cache/cache_adapter.dart';
+import '../../../core/cache/cache_string.dart';
 
-class ProfileController extends GetxController {
-  void toSettings() {
-    Get.toNamed(Routes.editProfile);
-  }
-
+class ProfileSettingsController extends GetxController {
   Future<void> changeThemeMode() async {
     if (Get.isDarkMode) {
       await CacheAdapter().writeStorage(CacheString.themeModeKey, "light");

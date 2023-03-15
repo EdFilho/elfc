@@ -16,8 +16,8 @@ class EditProfilePage extends GetView<EditProfileController> {
             children: [
               const UserCard(
                 userName: "Pedro Ramon",
-                birthDate: "28/07/1997",
                 createdAt: "2",
+                leading: true,
               ),
               const SizedBox(height: 32),
               Padding(

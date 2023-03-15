@@ -1,61 +1,50 @@
 import 'package:flutter/material.dart';
-import 'package:get/utils.dart';
+import 'package:get/get.dart';
 
 import '../components.dart';
 
 class UserCard extends StatelessWidget {
-  final String userName, birthDate, createdAt;
+  final String userName, createdAt;
+  final bool leading;
+  final void Function()? settings;
 
   const UserCard({
     Key? key,
     required this.userName,
-    required this.birthDate,
     required this.createdAt,
+    this.leading = false,
+    this.settings,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.symmetric(
-        horizontal: 16.0,
-        vertical: 20.0,
-      ),
-      decoration: BoxDecoration(
-        color: Theme.of(context).colorScheme.onPrimary,
-      ),
-      child: Row(
-        children: [
-          CircleAvatar(
-            radius: 36.0,
-            backgroundColor: Theme.of(context).colorScheme.primary,
-            child: const CircleAvatar(
-              radius: 34.0,
-              backgroundImage: AssetImage(
-                "assets/images/user.png",
-              ),
-            ),
+    return Stack(
+      children: [
+        Container(
+          padding: const EdgeInsets.symmetric(
+            horizontal: 16.0,
+            vertical: 24.0,
           ),
-          const SizedBox(width: 8),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+          width: double.maxFinite,
+          decoration: BoxDecoration(
+            color: Theme.of(context).colorScheme.onPrimary,
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
+              CircleAvatar(
+                radius: 36.0,
+                backgroundColor: Theme.of(context).colorScheme.primary,
+                child: const CircleAvatar(
+                  radius: 34.0,
+                  backgroundImage: AssetImage(
+                    "assets/images/user.png",
+                  ),
+                ),
+              ),
               Text(
                 userName,
                 style: Theme.of(context).textTheme.titleSmall,
-              ),
-              Row(
-                crossAxisAlignment: CrossAxisAlignment.end,
-                children: [
-                  const CustomIcon(
-                    icon: "cake",
-                    size: 16,
-                  ),
-                  const SizedBox(width: 2),
-                  Text(
-                    birthDate,
-                    style: Theme.of(context).textTheme.bodySmall,
-                  ),
-                ],
               ),
               Text(
                 "Membro há $createdAt mêses",
@@ -63,15 +52,30 @@ class UserCard extends StatelessWidget {
               ),
             ],
           ),
-          const Spacer(),
-          Image.asset(
-            context.isDarkMode
-                ? "assets/images/logo_white.png"
-                : "assets/images/logo_black.png",
-            height: 88.0,
+        ),
+        Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Row(
+            children: [
+              Visibility(
+                visible: leading,
+                child: InkWell(
+                  onTap: Get.back,
+                  child: const CustomIcon(icon: 'arrow_back'),
+                ),
+              ),
+              const Spacer(),
+              Visibility(
+                visible: settings != null,
+                child: InkWell(
+                  onTap: settings,
+                  child: const CustomIcon(icon: 'settings'),
+                ),
+              ),
+            ],
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }

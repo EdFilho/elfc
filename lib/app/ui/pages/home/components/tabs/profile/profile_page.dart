@@ -14,75 +14,113 @@ class ProfilePage extends GetView<ProfileController> {
     return Scaffold(
       resizeToAvoidBottomInset: true,
       body: SafeArea(
-        child: SingleChildScrollView(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const UserCard(
-                userName: "Pedro Ramon",
-                birthDate: "28/07/1997",
-                createdAt: "2",
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            UserCard(
+              userName: "Pedro Ramon",
+              createdAt: "2",
+              settings: () => Get.toNamed(Routes.profileSettings),
+            ),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const SizedBox(height: 32),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 16, bottom: 16),
+                    child: Text(
+                      "Galeria",
+                      style: Theme.of(context).textTheme.titleSmall,
+                    ),
+                  ),
+                  Flexible(
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                      child: GridView.count(
+                        shrinkWrap: true,
+                        crossAxisSpacing: 16,
+                        mainAxisSpacing: 16,
+                        crossAxisCount: 2,
+                        children: <Widget>[
+                          Container(
+                            height: 80,
+                            width: 80,
+                            color: Colors.amber,
+                          ),
+                          Container(
+                            height: 80,
+                            width: 80,
+                            color: Colors.blue,
+                          ),
+                          Container(
+                            height: 80,
+                            width: 80,
+                            color: Colors.blueGrey,
+                          ),
+                          Container(
+                            height: 80,
+                            width: 80,
+                            color: Colors.yellow,
+                          ),
+                          Container(
+                            height: 80,
+                            width: 80,
+                            color: Colors.orange,
+                          ),
+                          Container(
+                            height: 80,
+                            width: 80,
+                            color: Colors.red,
+                          ),
+                          Container(
+                            height: 80,
+                            width: 80,
+                            color: Colors.blueGrey,
+                          ),
+                          Container(
+                            height: 80,
+                            width: 80,
+                            color: Colors.cyanAccent,
+                          ),
+                          Container(
+                            height: 80,
+                            width: 80,
+                            color: Colors.brown,
+                          ),
+                          Container(
+                            height: 80,
+                            width: 80,
+                            color: Colors.pink[200],
+                          ),
+                          Container(
+                            height: 80,
+                            width: 80,
+                            color: Colors.blue,
+                          ),
+                          Container(
+                            height: 80,
+                            width: 80,
+                            color: Colors.amberAccent,
+                          ),
+                          Container(
+                            height: 80,
+                            width: 80,
+                            color: Colors.deepPurple,
+                          ),
+                          Container(
+                            height: 80,
+                            width: 80,
+                            color: Colors.purple,
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
               ),
-              const SizedBox(height: 32),
-              Padding(
-                padding: const EdgeInsets.only(left: 16, bottom: 16),
-                child: Text(
-                  "Conta",
-                  style: Theme.of(context).textTheme.titleSmall,
-                ),
-              ),
-              MenuOptions(
-                label: "Editar perfil",
-                onTap: () => Get.toNamed(Routes.editProfile),
-              ),
-              MenuOptions(
-                label: "Informações pessoais",
-                onTap: () => {},
-              ),
-              MenuOptions(
-                label: "Financeiro",
-                onTap: () => {},
-              ),
-              const SizedBox(height: 16),
-              Padding(
-                padding: const EdgeInsets.only(left: 16, bottom: 16),
-                child: Text(
-                  "Configurações",
-                  style: Theme.of(context).textTheme.titleSmall,
-                ),
-              ),
-              MenuOptions(
-                label: "Modo escuro",
-                onTap: () => controller.changeThemeMode(),
-                switcherOn: context.isDarkMode,
-                type: MenuOptionType.switcher,
-              ),
-              MenuOptions(
-                label: "Notificações",
-                onTap: () => {},
-              ),
-              const SizedBox(height: 16),
-              Padding(
-                padding: const EdgeInsets.only(left: 16, bottom: 16),
-                child: Text(
-                  "Conta",
-                  style: Theme.of(context).textTheme.titleSmall,
-                ),
-              ),
-              MenuOptions(
-                label: "Política e termos",
-                onTap: () => {},
-              ),
-              MenuOptions(
-                label: "FAQ",
-                onTap: () => {},
-              ),
-              MenuOptions(
-                label: "Suporte",
-                onTap: () => {},
-              ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );

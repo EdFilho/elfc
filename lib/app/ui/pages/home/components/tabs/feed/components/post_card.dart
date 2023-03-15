@@ -148,6 +148,9 @@ class PostCard extends StatelessWidget {
                 const SizedBox(height: 8),
                 RichText(
                   text: TextSpan(
+                    style: defaultText.copyWith(
+                      color: Theme.of(context).colorScheme.primary,
+                    ),
                     children: <TextSpan>[
                       TextSpan(
                         text: postData.userName,
