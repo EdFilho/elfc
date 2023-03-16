@@ -15,8 +15,8 @@ abstract class Routes {
   static const login = '/login';
   static const register = '/register';
   static const home = '/home';
-  static const editProfile = '/edit_profile';
-  static const profileSettings = '/profile_settings';
+  static const editProfile = '/profile/edit';
+  static const profileSettings = '/profile/settings';
 }
 
 abstract class AppRoutes {

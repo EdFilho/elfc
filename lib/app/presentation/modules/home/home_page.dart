@@ -30,26 +30,29 @@ class HomePage extends GetView<HomeController> {
             showUnselectedLabels: true,
             items: const [
               BottomNavigationBarItem(
-                icon: CustomIcon(icon: "home_outlined"),
-                activeIcon: CustomIcon(icon: "home"),
+                icon: CustomIcon(icon: "home_outlined", size: 32),
+                activeIcon: CustomIcon(
+                  icon: "home",
+                  size: 32,
+                ),
                 label: 'Home',
               ),
               BottomNavigationBarItem(
-                icon: CustomIcon(icon: "calendar_outlined"),
-                activeIcon: CustomIcon(icon: "calendar"),
+                icon: CustomIcon(icon: "calendar_outlined", size: 32),
+                activeIcon: CustomIcon(icon: "calendar", size: 32),
                 label: 'Agenda',
               ),
               BottomNavigationBarItem(
-                icon: CustomIcon(icon: "medal_outlined"),
-                activeIcon: CustomIcon(icon: "medal"),
+                icon: CustomIcon(icon: "medal_outlined", size: 32),
+                activeIcon: CustomIcon(icon: "medal", size: 32),
                 label: 'Pontuação',
               ),
               BottomNavigationBarItem(
                 icon: ImageProfile(
-                  size: 48,
+                  size: 32,
                 ),
                 activeIcon: ImageProfile(
-                  size: 48,
+                  size: 32,
                   bordered: true,
                 ),
                 label: 'Perfil',

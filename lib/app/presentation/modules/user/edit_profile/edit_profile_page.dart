@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../../shared/components/atoms/custom_select.dart';
 import '../../../shared/components/components.dart';
 import 'edit_profile_controller.dart';
 
@@ -26,13 +27,15 @@ class EditProfilePage extends GetView<EditProfileController> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Padding(
-                      padding: const EdgeInsets.only(bottom: 16),
-                      child: Text(
-                        "Conta",
-                        style: Theme.of(context).textTheme.titleSmall,
-                      ),
+                    Text(
+                      "Conta",
+                      style: Theme.of(context).textTheme.titleSmall,
                     ),
+                    Text(
+                      "Altere alguns dos dados que você informou no cadastro",
+                      style: Theme.of(context).textTheme.bodyMedium,
+                    ),
+                    const SizedBox(height: 16),
                     CustomTextField(
                       controller: controller.nameController.value,
                       label: "Nome",
@@ -71,22 +74,10 @@ class EditProfilePage extends GetView<EditProfileController> {
                             ),
                             padding: const EdgeInsets.only(top: 15),
                             child: Obx(
-                              () => DropdownButton(
+                              () => CustomSelect(
+                                options: controller.genders,
                                 value: controller.selectedGender.value,
-                                icon: const Icon(
-                                    Icons.keyboard_arrow_down_rounded),
-                                elevation: 8,
-                                underline: const SizedBox(),
-                                isExpanded: true,
-                                items: controller.genders
-                                    .map<DropdownMenuItem<String>>(
-                                        (String value) {
-                                  return DropdownMenuItem<String>(
-                                    value: value,
-                                    child: Text(value),
-                                  );
-                                }).toList(),
-                                onChanged: (String? value) =>
+                                onChanged: (value) =>
                                     controller.selectGender(value),
                               ),
                             ),
