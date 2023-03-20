@@ -4,10 +4,11 @@ import '../../core/configs/app_binding.dart';
 import 'modules/auth/login/login.dart';
 import 'modules/auth/onboarding/onboarding.dart';
 import 'modules/auth/register/register.dart';
-import 'modules/user/edit_profile/edit_profile.dart';
 import 'modules/home/home.dart';
-import 'modules/user/profile_settings/profile_settings.dart';
 import 'modules/splash/splash.dart';
+import 'modules/user/account_info/account_info.dart';
+import 'modules/user/edit_profile/edit_profile.dart';
+import 'modules/user/profile_settings/profile_settings.dart';
 
 abstract class Routes {
   static const initial = '/';
@@ -17,6 +18,7 @@ abstract class Routes {
   static const home = '/home';
   static const editProfile = '/profile/edit';
   static const profileSettings = '/profile/settings';
+  static const accountInfo = '/profile/accountInfo_info';
 }
 
 abstract class AppRoutes {
@@ -65,6 +67,12 @@ abstract class AppRoutes {
       page: () => const ProfileSettingsPage(),
       transition: Transition.native,
       binding: ProfileSettingsBindings(),
+    ),
+    GetPage(
+      name: Routes.accountInfo,
+      page: () => const AccountInfoPage(),
+      transition: Transition.native,
+      binding: AccountInfoBindings(),
     ),
   ];
 }

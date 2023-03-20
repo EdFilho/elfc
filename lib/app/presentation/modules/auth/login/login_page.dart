@@ -51,10 +51,28 @@ class LoginPage extends GetView<LoginController> {
               CustomTextField(
                 controller: controller.emailController.value,
                 label: 'Email',
+                keyboardType: TextInputType.emailAddress,
               ),
-              CustomTextField(
-                controller: controller.passwordController.value,
-                label: 'Senha',
+              Obx(
+                () => CustomTextField(
+                  controller: controller.passwordController.value,
+                  label: "Senha",
+                  obscureText: !controller.passwordIsVisible.value,
+                  suffixIcon: InkWell(
+                    onTap: () => controller.passwordIsVisible.toggle(),
+                    child: Visibility(
+                      visible: controller.passwordIsVisible.value,
+                      replacement: const CustomIcon(
+                        icon: "eye_slash",
+                        size: 24,
+                      ),
+                      child: const CustomIcon(
+                        icon: "eye",
+                        size: 24,
+                      ),
+                    ),
+                  ),
+                ),
               ),
               TextButton(
                 child: const Text('Esqueci minha senha'),

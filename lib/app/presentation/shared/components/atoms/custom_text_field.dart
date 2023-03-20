@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class CustomTextField extends StatelessWidget {
   final TextEditingController controller;
@@ -8,6 +9,7 @@ class CustomTextField extends StatelessWidget {
   final TextInputType? keyboardType;
   final FocusNode? focusNode;
   final bool obscureText;
+  final List<TextInputFormatter>? maskFormatter;
   final Widget? suffixIcon;
   final bool enabled;
 
@@ -19,6 +21,7 @@ class CustomTextField extends StatelessWidget {
     this.onChage,
     this.keyboardType = TextInputType.text,
     this.focusNode,
+    this.maskFormatter,
     this.obscureText = false,
     this.suffixIcon,
     this.enabled = true,
@@ -39,6 +42,7 @@ class CustomTextField extends StatelessWidget {
         obscureText: obscureText,
         focusNode: focusNode,
         enabled: enabled,
+        inputFormatters: maskFormatter,
         keyboardType: keyboardType,
         onFieldSubmitted: onSubmitted,
         onChanged: onChage,

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../../app_routes.dart';
 import '../../../../../core/shared/enums/enums.dart';
+import '../../../app_routes.dart';
 import '../../../shared/components/components.dart';
 import 'profile_settings_controller.dart';
 
@@ -40,8 +40,8 @@ class ProfileSettingsPage extends GetView<ProfileSettingsController> {
                       onTap: () => Get.toNamed(Routes.editProfile),
                     ),
                     MenuOptions(
-                      label: "Informações pessoais",
-                      onTap: () => {},
+                      label: "Informações de conta",
+                      onTap: () => Get.toNamed(Routes.accountInfo),
                     ),
                     MenuOptions(
                       label: "Financeiro",
