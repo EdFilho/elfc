@@ -18,8 +18,8 @@ class ProfileSettingsPage extends GetView<ProfileSettingsController> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const UserCard(
-              userName: "Pedro Ramon",
-              createdAt: "2",
+              userName: 'Pedro Ramon',
+              createdAt: '2',
               leading: true,
             ),
             Expanded(
@@ -31,58 +31,62 @@ class ProfileSettingsPage extends GetView<ProfileSettingsController> {
                     Padding(
                       padding: const EdgeInsets.only(left: 16, bottom: 16),
                       child: Text(
-                        "Conta",
+                        'Conta',
                         style: Theme.of(context).textTheme.titleSmall,
                       ),
                     ),
                     MenuOptions(
-                      label: "Editar perfil",
+                      label: 'Editar perfil',
                       onTap: () => Get.toNamed(Routes.editProfile),
                     ),
                     MenuOptions(
-                      label: "Informações de conta",
+                      label: 'Informações de conta',
                       onTap: () => Get.toNamed(Routes.accountInfo),
                     ),
                     MenuOptions(
-                      label: "Financeiro",
+                      label: 'Segurança',
+                      onTap: () => Get.toNamed(Routes.security),
+                    ),
+                    MenuOptions(
+                      label: 'Financeiro',
                       onTap: () => {},
                     ),
                     const SizedBox(height: 16),
                     Padding(
                       padding: const EdgeInsets.only(left: 16, bottom: 16),
                       child: Text(
-                        "Configurações",
+                        'Configurações',
                         style: Theme.of(context).textTheme.titleSmall,
                       ),
                     ),
                     MenuOptions(
-                      label: "Modo escuro",
+                      label: 'Modo escuro',
                       onTap: () => controller.changeThemeMode(),
                       switcherOn: context.isDarkMode,
                       type: MenuOptionType.switcher,
                     ),
                     MenuOptions(
-                      label: "Notificações",
+                      label: 'Notificações',
                       onTap: () => {},
                     ),
                     const SizedBox(height: 16),
                     Padding(
                       padding: const EdgeInsets.only(left: 16, bottom: 16),
                       child: Text(
-                        "Conta",
+                        'Conta',
                         style: Theme.of(context).textTheme.titleSmall,
                       ),
                     ),
                     MenuOptions(
-                      label: "Política e termos",
+                      label: 'Política e termos',
                       onTap: () => {},
                     ),
                     MenuOptions(
-                      label: "FAQ",
+                      label: 'FAQ',
                       onTap: () => {},
                     ),
                     MenuOptions(
-                      label: "Suporte",
+                      label: 'Suporte',
                       onTap: () => {},
                     ),
                   ],
