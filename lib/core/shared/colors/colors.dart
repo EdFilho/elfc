@@ -10,6 +10,8 @@ abstract class AppColors {
   static const softDarkColor = Color(0xFF424344);
   static const maskDark = Color(0xFFEFEFEF);
   static const errorColor = Color(0xFFBE2727);
+  static const success = Color(0xFF12681A);
+  static const successDark = Color(0xFF17B526);
 }
 
 class VariableColors {

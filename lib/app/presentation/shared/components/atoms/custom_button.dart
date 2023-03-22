@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../components.dart';
+
 class CustomButtom extends StatelessWidget {
   final void Function() onTap;
   final String label, type;
   final bool disable;
   final bool small;
+  final String? icon;
 
   const CustomButtom({
     super.key,
@@ -14,6 +17,7 @@ class CustomButtom extends StatelessWidget {
     this.type = 'confirm',
     this.disable = false,
     this.small = false,
+    this.icon,
   });
 
   @override
@@ -29,8 +33,7 @@ class CustomButtom extends StatelessWidget {
         backgroundColor = context.theme.colorScheme.error;
         break;
       default:
-        throw Exception(
-            'Invalid type. Only "confirm" or "cancel" are allowed.');
+        throw Exception('Invalid type. Only "confirm" or "cancel" are allowed.');
     }
 
     return ElevatedButton(
@@ -48,13 +51,25 @@ class CustomButtom extends StatelessWidget {
             : null,
       ),
       onPressed: disable ? null : onTap,
-      child: Text(
-        label,
-        style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-              color: type != 'confirm'
-                  ? Theme.of(context).primaryColor
-                  : Theme.of(context).colorScheme.onPrimary,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Visibility(
+            visible: icon != null,
+            child: CustomIcon(
+              icon: icon ?? '',
+              color: Theme.of(context).colorScheme.onPrimary,
             ),
+          ),
+          Text(
+            label,
+            style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                  color: type != 'confirm'
+                      ? Theme.of(context).primaryColor
+                      : Theme.of(context).colorScheme.onPrimary,
+                ),
+          ),
+        ],
       ),
     );
   }

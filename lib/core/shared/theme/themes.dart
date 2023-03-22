@@ -1,8 +1,8 @@
-import 'package:elfc/core/shared/theme/color_schemes.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../colors/colors.dart';
+import 'color_schemes.dart';
 
 TextStyle appBarTextStyle = GoogleFonts.roboto(
   fontSize: 20.0,
@@ -46,7 +46,9 @@ abstract class AppTheme {
     cardColor: AppColors.softDarkColor,
     dialogBackgroundColor: AppColors.softDarkColor,
     appBarTheme: const AppBarTheme(
-      backgroundColor: AppColors.softDarkColor,
+      backgroundColor: Colors.transparent,
+      elevation: 0,
+      shadowColor: Colors.transparent,
     ),
     iconTheme: const IconThemeData(
       color: AppColors.whiteColor,
@@ -90,7 +92,9 @@ abstract class AppTheme {
     cardColor: AppColors.whiteColor,
     dialogBackgroundColor: AppColors.whiteColor,
     appBarTheme: const AppBarTheme(
-      backgroundColor: AppColors.softWhite,
+      backgroundColor: Colors.transparent,
+      elevation: 0,
+      shadowColor: Colors.transparent,
     ),
     iconTheme: const IconThemeData(
       color: AppColors.allDarkColor,

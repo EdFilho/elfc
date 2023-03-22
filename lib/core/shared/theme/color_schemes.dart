@@ -1,5 +1,6 @@
-import 'package:elfc/core/shared/colors/colors.dart';
 import 'package:flutter/material.dart';
+
+import '../colors/colors.dart';
 
 ColorScheme lightColorScheme = const ColorScheme(
   brightness: Brightness.light,
@@ -21,7 +22,7 @@ ColorScheme lightColorScheme = const ColorScheme(
   onErrorContainer: AppColors.errorColor,
   background: AppColors.softWhite,
   onBackground: AppColors.allDarkColor,
-  surface: AppColors.whiteColor,
+  surface: AppColors.success,
   onSurface: AppColors.allDarkColor,
   surfaceVariant: AppColors.softWhite,
   onSurfaceVariant: AppColors.whiteColor,
@@ -53,7 +54,7 @@ ColorScheme darkColorScheme = const ColorScheme(
   onErrorContainer: AppColors.errorColor,
   background: AppColors.softDarkColor,
   onBackground: AppColors.whiteColor,
-  surface: AppColors.allDarkColor,
+  surface: AppColors.successDark,
   onSurface: AppColors.whiteColor,
   surfaceVariant: AppColors.softDarkColor,
   onSurfaceVariant: AppColors.allDarkColor,

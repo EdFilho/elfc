@@ -12,11 +12,10 @@ class FeedPage extends GetView<FeedController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Theme.of(context).cardColor,
         leading: Image(
           image: AssetImage(
-            context.isDarkMode
-                ? "assets/images/logo_white.png"
-                : "assets/images/logo_black.png",
+            context.isDarkMode ? "assets/images/logo_white.png" : "assets/images/logo_black.png",
           ),
         ),
         actions: [

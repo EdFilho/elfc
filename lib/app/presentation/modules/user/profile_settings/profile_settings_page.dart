@@ -49,7 +49,7 @@ class ProfileSettingsPage extends GetView<ProfileSettingsController> {
                     ),
                     MenuOptions(
                       label: 'Financeiro',
-                      onTap: () => {},
+                      onTap: () => Get.toNamed(Routes.finance),
                     ),
                     const SizedBox(height: 16),
                     Padding(
