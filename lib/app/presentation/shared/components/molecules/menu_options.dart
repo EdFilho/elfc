@@ -8,6 +8,7 @@ class MenuOptions extends StatelessWidget {
   final void Function() onTap;
   final MenuOptionType type;
   final bool switcherOn;
+  final String? icon;
 
   const MenuOptions({
     super.key,
@@ -15,6 +16,7 @@ class MenuOptions extends StatelessWidget {
     required this.onTap,
     this.type = MenuOptionType.router,
     this.switcherOn = false,
+    this.icon,
   });
 
   Widget optionIcon(BuildContext context) {
@@ -46,7 +48,11 @@ class MenuOptions extends StatelessWidget {
       child: Container(
         padding: EdgeInsets.symmetric(
           horizontal: 16,
-          vertical: type == MenuOptionType.router ? 24 : 13,
+          vertical: type == MenuOptionType.router
+              ? icon != null
+                  ? 12
+                  : 24
+              : 10,
         ),
         decoration: BoxDecoration(
           color: Theme.of(context).dialogBackgroundColor,
@@ -59,6 +65,10 @@ class MenuOptions extends StatelessWidget {
         ),
         child: Row(
           children: [
+            Visibility(
+              visible: icon != null,
+              child: CustomIcon(icon: icon ?? ''),
+            ),
             Text(
               label,
               style: Theme.of(context).textTheme.bodyLarge,

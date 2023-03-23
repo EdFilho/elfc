@@ -12,6 +12,7 @@ import 'modules/user/finance/finance.dart';
 import 'modules/user/notification/notification.dart';
 import 'modules/user/profile_settings/profile_settings.dart';
 import 'modules/user/security/security.dart';
+import 'modules/user/support/support.dart';
 
 abstract class Routes {
   static const initial = '/';
@@ -25,6 +26,7 @@ abstract class Routes {
   static const security = '/profile/security';
   static const finance = '/profile/finance';
   static const notification = '/profile/notification';
+  static const support = '/profile/support';
 }
 
 abstract class AppRoutes {
@@ -97,6 +99,12 @@ abstract class AppRoutes {
       page: () => const NotificationPage(),
       transition: Transition.native,
       binding: NotificationBindings(),
+    ),
+    GetPage(
+      name: Routes.support,
+      page: () => const SupportPage(),
+      transition: Transition.native,
+      binding: SupportBindings(),
     ),
   ];
 }
