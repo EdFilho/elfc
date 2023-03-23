@@ -9,6 +9,7 @@ import 'modules/splash/splash.dart';
 import 'modules/user/account_info/account_info.dart';
 import 'modules/user/edit_profile/edit_profile.dart';
 import 'modules/user/finance/finance.dart';
+import 'modules/user/notification/notification.dart';
 import 'modules/user/profile_settings/profile_settings.dart';
 import 'modules/user/security/security.dart';
 
@@ -23,6 +24,7 @@ abstract class Routes {
   static const accountInfo = '/profile/accountInfo_info';
   static const security = '/profile/security';
   static const finance = '/profile/finance';
+  static const notification = '/profile/notification';
 }
 
 abstract class AppRoutes {
@@ -89,6 +91,12 @@ abstract class AppRoutes {
       page: () => const FinancePage(),
       transition: Transition.native,
       binding: FinanceBindings(),
+    ),
+    GetPage(
+      name: Routes.notification,
+      page: () => const NotificationPage(),
+      transition: Transition.native,
+      binding: NotificationBindings(),
     ),
   ];
 }

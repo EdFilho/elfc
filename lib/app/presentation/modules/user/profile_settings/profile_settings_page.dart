@@ -67,7 +67,7 @@ class ProfileSettingsPage extends GetView<ProfileSettingsController> {
                     ),
                     MenuOptions(
                       label: 'Notificações',
-                      onTap: () => {},
+                      onTap: () => Get.toNamed(Routes.notification),
                     ),
                     const SizedBox(height: 16),
                     Padding(
