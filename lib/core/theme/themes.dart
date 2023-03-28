@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import '../colors/colors.dart';
 import 'color_schemes.dart';
+import 'colors.dart';
 
 TextStyle appBarTextStyle = GoogleFonts.roboto(
   fontSize: 20.0,

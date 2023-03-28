@@ -1,8 +1,7 @@
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../../../../shared/components/components.dart';
+import '../../../../../components/components.dart';
 import '../../register_controller.dart';
 
 class PersonalData extends GetView<RegisterController> {
@@ -53,15 +52,13 @@ class PersonalData extends GetView<RegisterController> {
                     elevation: 8,
                     underline: const SizedBox(),
                     isExpanded: true,
-                    items: controller.genders
-                        .map<DropdownMenuItem<String>>((String value) {
+                    items: controller.genders.map<DropdownMenuItem<String>>((String value) {
                       return DropdownMenuItem<String>(
                         value: value,
                         child: Text(value),
                       );
                     }).toList(),
-                    onChanged: (String? value) =>
-                        controller.selectGender(value),
+                    onChanged: (String? value) => controller.selectGender(value),
                   ),
                 ),
               ),

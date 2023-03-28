@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../../../../../core/shared/theme/themes.dart';
-import '../../../../shared/components/components.dart';
+import '../../../../../../core/theme/themes.dart';
+import '../../../../components/components.dart';
 import '../../../home/home_controller.dart';
 
 class NewPost extends GetView<HomeController> {

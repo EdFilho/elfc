@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../../shared/components/atoms/custom_select.dart';
-import '../../../shared/components/components.dart';
+import '../../../components/atoms/custom_select.dart';
+import '../../../components/components.dart';
 import 'edit_profile_controller.dart';
 
 class EditProfilePage extends GetView<EditProfileController> {
@@ -77,8 +77,7 @@ class EditProfilePage extends GetView<EditProfileController> {
                               () => CustomSelect(
                                 options: controller.genders,
                                 value: controller.selectedGender.value,
-                                onChanged: (value) =>
-                                    controller.selectGender(value),
+                                onChanged: (value) => controller.selectGender(value),
                               ),
                             ),
                           ),

@@ -4,7 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 import '../../app/presentation/app_routes.dart';
-import '../shared/theme/themes.dart';
+import '../theme/themes.dart';
 import 'app_controller.dart';
 
 class AppWidget extends StatefulWidget {

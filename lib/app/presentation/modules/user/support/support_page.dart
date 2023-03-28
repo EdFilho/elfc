@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../../shared/components/components.dart';
+import '../../../components/components.dart';
 import 'support_controller.dart';
 
 class SupportPage extends GetView<SupportController> {

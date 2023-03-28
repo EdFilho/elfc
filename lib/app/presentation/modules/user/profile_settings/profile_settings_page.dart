@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 
 import '../../../../../core/shared/enums/enums.dart';
 import '../../../app_routes.dart';
-import '../../../shared/components/components.dart';
+import '../../../components/components.dart';
 import 'profile_settings_controller.dart';
 
 class ProfileSettingsPage extends GetView<ProfileSettingsController> {

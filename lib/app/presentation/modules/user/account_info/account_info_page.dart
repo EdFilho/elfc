@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../../../core/shared/utilities/helppers.dart';
-import '../../../shared/components/components.dart';
+import '../../../components/components.dart';
 import 'account_info_controller.dart';
 
 class AccountInfoPage extends GetView<AccountInfoController> {

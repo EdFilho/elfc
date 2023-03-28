@@ -2,10 +2,10 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../../../../../core/shared/colors/colors.dart';
-import '../../../../../../core/shared/theme/themes.dart';
+import '../../../../../../core/theme/colors.dart';
+import '../../../../../../core/theme/themes.dart';
 import '../../../../../domain/entities/social/post.dart';
-import '../../../../shared/components/components.dart';
+import '../../../../components/components.dart';
 
 class PostCard extends StatelessWidget {
   final Post postData;
@@ -59,10 +59,8 @@ class PostCard extends StatelessWidget {
                             ),
                           ),
                         ),
-                        placeholder: (context, url) =>
-                            const CircularProgressIndicator(),
-                        errorWidget: (context, url, error) =>
-                            const Icon(Icons.error),
+                        placeholder: (context, url) => const CircularProgressIndicator(),
+                        errorWidget: (context, url, error) => const Icon(Icons.error),
                       ),
                     ),
                     const SizedBox(width: 8),
@@ -74,8 +72,7 @@ class PostCard extends StatelessWidget {
                     const Spacer(),
                     PopupMenuButton(
                       icon: const CustomIcon(icon: "popup_menu"),
-                      itemBuilder: (BuildContext context) =>
-                          <PopupMenuEntry<String>>[
+                      itemBuilder: (BuildContext context) => <PopupMenuEntry<String>>[
                         const PopupMenuItem<String>(
                           value: 'item',
                           child: Text('Item 1'),
@@ -100,8 +97,7 @@ class PostCard extends StatelessWidget {
                     fit: BoxFit.cover,
                     width: Get.width,
                   ),
-                  placeholder: (context, url) =>
-                      const CircularProgressIndicator(),
+                  placeholder: (context, url) => const CircularProgressIndicator(),
                   errorWidget: (context, url, error) => const Icon(Icons.error),
                 ),
                 const SizedBox(height: 12),

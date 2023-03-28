@@ -1,4 +1,4 @@
-import '../../../shared/components/components.dart';
+import '../../../components/components.dart';
 
 import 'calendar_controller.dart';
 import 'package:flutter/material.dart';

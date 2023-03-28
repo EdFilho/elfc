@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../../shared/components/components.dart';
+import '../../../components/components.dart';
 import 'finance_controller.dart';
 
 class FinancePage extends GetView<FinanceController> {

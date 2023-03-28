@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../../core/shared/enums/menu_option_type.dart';
+import '../../../../core/shared/enums/menu_option_type.dart';
 import '../components.dart';
 
 class MenuOptions extends StatelessWidget {
