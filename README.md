@@ -55,7 +55,7 @@ Referências:
 A modularidade do projeto está aplicada a camada de Presentation. Os modulos funcionam como features, que os usuário acessam de acordo com o fluxo. Ex: Social, toda a parte social será acessada a partir do feed, então tudo relacionado a isso vai pra o módulo "social".
 
 ## Estrutura de arquivos:
-
+```
 lib
 ├── app
 │   ├── data
@@ -76,6 +76,7 @@ lib
 │   ├── theme
 │   ├── shared
 └── main.dart
+```
 
 # :calling: versionamento 
 
