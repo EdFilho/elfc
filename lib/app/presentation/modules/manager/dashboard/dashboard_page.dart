@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../../components/atoms/finance_balance.dart';
 import '../../../components/components.dart';
 import 'components/components.dart';
 import 'dashboard_controller.dart';
