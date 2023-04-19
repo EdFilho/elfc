@@ -43,6 +43,11 @@ class HomePage extends GetView<HomeController> {
                 label: 'Agenda',
               ),
               BottomNavigationBarItem(
+                icon: CustomIcon(icon: "bar_chart_outlined", size: 32),
+                activeIcon: CustomIcon(icon: "bar_chart", size: 32),
+                label: 'Gestão',
+              ),
+              BottomNavigationBarItem(
                 icon: CustomIcon(icon: "medal_outlined", size: 32),
                 activeIcon: CustomIcon(icon: "medal", size: 32),
                 label: 'Pontuação',

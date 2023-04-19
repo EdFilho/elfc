@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../events/calendar/calendar.dart';
+import '../manager/dashboard/dashboard.dart';
 import '../rewards/score/score.dart';
 import '../social/feed/feed.dart';
 import '../user/profile/profile.dart';
@@ -16,6 +17,7 @@ class HomeController extends GetxController {
   RxList<Widget> screens = <Widget>[
     const FeedPage(),
     const CalendarPage(),
+    const DashboardPage(),
     const ScorePage(),
     const ProfilePage(),
   ].obs;

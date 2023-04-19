@@ -29,7 +29,7 @@ TextStyle title = GoogleFonts.roboto(
 
 TextStyle titleSmall = GoogleFonts.roboto(
   fontSize: 16,
-  fontWeight: FontWeight.w600,
+  fontWeight: FontWeight.w800,
 );
 
 TextStyle titleLarge = GoogleFonts.roboto(
