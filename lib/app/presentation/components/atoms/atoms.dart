@@ -5,3 +5,4 @@ export './finance_balance.dart';
 export './image_profile.dart';
 export './percent_bar.dart';
 export './static_progress_bar.dart';
+export './tag.dart';

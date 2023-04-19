@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../core/shared/utilities/helppers.dart';
+import '../components.dart';
 
 class AmountCard extends StatelessWidget {
   final String title;
@@ -40,14 +40,9 @@ class AmountCard extends StatelessWidget {
                       : Theme.of(context).colorScheme.primary,
                 ),
           ),
-          Text(
-            monetary ? toRealFormat(value.toString()) : value.toString(),
-            style: Theme.of(context).textTheme.titleSmall?.copyWith(
-                  fontWeight: FontWeight.normal,
-                  color: isSelected
-                      ? Theme.of(context).colorScheme.background
-                      : Theme.of(context).colorScheme.primary,
-                ),
+          Tag(
+            value.toString(),
+            isSelected: isSelected,
           ),
         ],
       ),
