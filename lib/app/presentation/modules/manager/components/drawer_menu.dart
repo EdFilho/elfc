@@ -1,8 +1,10 @@
 // ignore_for_file: avoid_print
 
+import 'package:elfc/app/presentation/app_routes.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
-import '../../../../components/components.dart';
+import '../../../components/components.dart';
 
 class DrawerMenu extends StatelessWidget {
   const DrawerMenu({super.key});
@@ -32,11 +34,11 @@ class DrawerMenu extends StatelessWidget {
             const SizedBox(height: 8.0),
             DrawerOption(
               title: 'Cadastro de fornecedor',
-              onTap: () => print('cadastro de fornecedor'),
+              onTap: () => Get.toNamed(Routes.newSupplier),
             ),
             DrawerOption(
               title: 'Cadastro de tipo de despesa',
-              onTap: () => print('Cadastro de tipo de despesa'),
+              onTap: () => Get.toNamed(Routes.newExpenseType),
             ),
             DrawerOption(
               title: 'Cadastro de despesa',

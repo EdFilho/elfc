@@ -3,17 +3,17 @@ import 'package:get/get.dart';
 
 import '../../../components/components.dart';
 import '../components/components.dart';
-import 'new_supplier_controller.dart';
+import 'new_expense_type_controller.dart';
 
-class NewSupplierPage extends GetView<NewSupplierController> {
-  const NewSupplierPage({Key? key}) : super(key: key);
+class NewExpenseTypePage extends GetView<NewExpenseTypeController> {
+  const NewExpenseTypePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: true,
       appBar: AppBar(
-        title: const Text('Novo Fornecedor'),
+        title: const Text('Tipos de despesas'),
       ),
       drawer: const DrawerMenu(),
       body: SafeArea(
@@ -25,17 +25,17 @@ class NewSupplierPage extends GetView<NewSupplierController> {
             children: [
               const SizedBox(height: 32.0),
               Text(
-                'Insira os dados do seu fornecedor',
+                'Insira os dados do tipo de despesa',
                 style: Theme.of(context).textTheme.titleMedium,
               ),
               const SizedBox(height: 16.0),
               CustomTextField(
-                controller: controller.supplierNameController.value,
-                label: 'Fornecedor',
+                controller: controller.expenseTypeTitle.value,
+                label: 'Titulo',
               ),
               CustomTextField(
-                controller: controller.supplierDocController.value,
-                label: 'CPF/CNPJ',
+                controller: controller.expenseTypeDescription.value,
+                label: 'Descrição',
               ),
               const SizedBox(height: 48.0),
               CustomButtom(onTap: () => {}, label: 'Salvar')

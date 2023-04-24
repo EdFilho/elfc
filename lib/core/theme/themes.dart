@@ -5,8 +5,8 @@ import 'color_schemes.dart';
 import 'colors.dart';
 
 TextStyle appBarTextStyle = GoogleFonts.roboto(
-  fontSize: 20.0,
-  fontWeight: FontWeight.w500,
+  fontSize: 18.0,
+  fontWeight: FontWeight.bold,
 );
 
 TextStyle defaultText = GoogleFonts.roboto();
@@ -45,10 +45,11 @@ abstract class AppTheme {
     scaffoldBackgroundColor: AppColors.backgroundDarkColor,
     cardColor: AppColors.softDarkColor,
     dialogBackgroundColor: AppColors.softDarkColor,
-    appBarTheme: const AppBarTheme(
+    appBarTheme: AppBarTheme(
       backgroundColor: Colors.transparent,
-      elevation: 0,
       shadowColor: Colors.transparent,
+      elevation: 0,
+      toolbarTextStyle: appBarTextStyle,
     ),
     iconTheme: const IconThemeData(
       color: AppColors.whiteColor,
