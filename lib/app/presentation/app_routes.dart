@@ -5,6 +5,7 @@ import 'modules/auth/login/login.dart';
 import 'modules/auth/onboarding/onboarding.dart';
 import 'modules/auth/register/register.dart';
 import 'modules/home/home.dart';
+import 'modules/manager/new_supplier/new_supplier.dart';
 import 'modules/splash/splash.dart';
 import 'modules/user/account_info/account_info.dart';
 import 'modules/user/edit_profile/edit_profile.dart';
@@ -27,6 +28,7 @@ abstract class Routes {
   static const finance = '/profile/finance';
   static const notification = '/profile/notification';
   static const support = '/profile/support';
+  static const newSupplier = '/manager/new_supplier';
 }
 
 abstract class AppRoutes {
@@ -105,6 +107,12 @@ abstract class AppRoutes {
       page: () => const SupportPage(),
       transition: Transition.native,
       binding: SupportBindings(),
+    ),
+    GetPage(
+      name: Routes.newSupplier,
+      page: () => const NewSupplierPage(),
+      transition: Transition.native,
+      binding: NewSupplierBindings(),
     ),
   ];
 }

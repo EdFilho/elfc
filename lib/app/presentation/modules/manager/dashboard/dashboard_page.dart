@@ -13,11 +13,9 @@ class DashboardPage extends GetView<DashboardController> {
     return Scaffold(
       resizeToAvoidBottomInset: true,
       appBar: AppBar(
-        leading: InkWell(
-          onTap: () => {},
-          child: const CustomIcon(icon: 'menu'),
-        ),
+        title: const Text('Dashboard'),
       ),
+      drawer: const DrawerMenu(),
       body: SafeArea(
         child: SingleChildScrollView(
           padding: const EdgeInsets.symmetric(horizontal: 16),
