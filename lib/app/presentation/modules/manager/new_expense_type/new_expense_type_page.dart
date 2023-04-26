@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../components/components.dart';
-import '../components/components.dart';
 import 'new_expense_type_controller.dart';
 
 class NewExpenseTypePage extends GetView<NewExpenseTypeController> {
@@ -15,7 +14,6 @@ class NewExpenseTypePage extends GetView<NewExpenseTypeController> {
       appBar: AppBar(
         title: const Text('Tipos de despesas'),
       ),
-      drawer: const DrawerMenu(),
       body: SafeArea(
         child: SingleChildScrollView(
           padding: const EdgeInsets.symmetric(horizontal: 16),

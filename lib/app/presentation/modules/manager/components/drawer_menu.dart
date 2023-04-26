@@ -42,7 +42,7 @@ class DrawerMenu extends StatelessWidget {
             ),
             DrawerOption(
               title: 'Cadastro de despesa',
-              onTap: () => print('Cadastro de despesa'),
+              onTap: () => Get.toNamed(Routes.newExpense),
             ),
             const CustomDivider(),
             Text(

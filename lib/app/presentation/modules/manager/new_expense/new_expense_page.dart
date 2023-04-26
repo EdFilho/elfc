@@ -2,17 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../components/components.dart';
-import 'new_supplier_controller.dart';
+import 'new_expense_controller.dart';
 
-class NewSupplierPage extends GetView<NewSupplierController> {
-  const NewSupplierPage({Key? key}) : super(key: key);
+class NewExpensePage extends GetView<NewExpenseController> {
+  const NewExpensePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: true,
       appBar: AppBar(
-        title: const Text('Novo Fornecedor'),
+        title: const Text('Nova despesa'),
       ),
       body: SafeArea(
         child: SingleChildScrollView(
@@ -23,17 +23,17 @@ class NewSupplierPage extends GetView<NewSupplierController> {
             children: [
               const SizedBox(height: 32.0),
               Text(
-                'Insira os dados do seu fornecedor',
+                'Insira os dados da nova despesa',
                 style: Theme.of(context).textTheme.titleMedium,
               ),
               const SizedBox(height: 16.0),
               CustomTextField(
-                controller: controller.supplierNameController.value,
-                label: 'Fornecedor',
+                controller: controller.expenseTitle.value,
+                label: 'Titulo',
               ),
               CustomTextField(
-                controller: controller.supplierDocController.value,
-                label: 'CPF/CNPJ',
+                controller: controller.expenseSupplier.value,
+                label: 'Fornecedor',
               ),
               const SizedBox(height: 48.0),
               CustomButtom(onTap: () => {}, label: 'Salvar')

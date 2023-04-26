@@ -5,6 +5,7 @@ import 'modules/auth/login/login.dart';
 import 'modules/auth/onboarding/onboarding.dart';
 import 'modules/auth/register/register.dart';
 import 'modules/home/home.dart';
+import 'modules/manager/new_expense/new_expense.dart';
 import 'modules/manager/new_expense_type/new_expense_type.dart';
 import 'modules/manager/new_supplier/new_supplier.dart';
 import 'modules/splash/splash.dart';
@@ -30,6 +31,7 @@ abstract class Routes {
   static const notification = '/profile/notification';
   static const support = '/profile/support';
   static const newSupplier = '/manager/new_supplier';
+  static const newExpense = '/manager/new_expense';
   static const newExpenseType = '/manager/new_expense_type';
 }
 
@@ -121,6 +123,12 @@ abstract class AppRoutes {
       page: () => const NewExpenseTypePage(),
       transition: Transition.native,
       binding: NewExpenseTypeBindings(),
+    ),
+    GetPage(
+      name: Routes.newExpense,
+      page: () => const NewExpensePage(),
+      transition: Transition.native,
+      binding: NewExpenseBindings(),
     ),
   ];
 }
