@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:dio/dio.dart';
 
+import '../../../../core/shared/constants/constants.dart';
 import '../http/http_client.dart';
 import '../http/http_error.dart';
 
@@ -28,11 +29,13 @@ class DioAdapter implements IHttpClient {
 
     final jsonBody = body != null ? jsonEncode(body) : {};
 
+    final url = "${Api().baseUrl}$endpoint";
+
     try {
       switch (method) {
         case 'get':
           dioResponse = await dio.get(
-            "url$endpoint",
+            url,
             queryParameters: queryParameters,
             options: Options(
               headers: headers ?? defaultHeaders,
@@ -41,7 +44,7 @@ class DioAdapter implements IHttpClient {
           break;
         case 'delete':
           dioResponse = await dio.delete(
-            "url$endpoint",
+            url,
             options: Options(
               headers: headers ?? defaultHeaders,
             ),
@@ -49,7 +52,7 @@ class DioAdapter implements IHttpClient {
           break;
         case 'post':
           dioResponse = await dio.post(
-            "url$endpoint",
+            url,
             options: Options(
               headers: headers ?? defaultHeaders,
             ),
@@ -58,7 +61,7 @@ class DioAdapter implements IHttpClient {
           break;
         case 'put':
           dioResponse = await dio.put(
-            "url$endpoint",
+            url,
             options: Options(
               headers: headers ?? defaultHeaders,
             ),
@@ -68,8 +71,7 @@ class DioAdapter implements IHttpClient {
       }
     } catch (e) {
       dynamic error = e;
-      _handleResponse(error.response);
-      throw HttpError.serverError;
+      throw _handleResponse(error.response);
     }
     return _handleResponse(dioResponse);
   }

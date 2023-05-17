@@ -89,6 +89,10 @@ class ProfileSettingsPage extends GetView<ProfileSettingsController> {
                       label: 'Suporte',
                       onTap: () => Get.toNamed(Routes.support),
                     ),
+                    MenuOptions(
+                      label: 'Sair',
+                      onTap: () => controller.logout(),
+                    ),
                   ],
                 ),
               ),

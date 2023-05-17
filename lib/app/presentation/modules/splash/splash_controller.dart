@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 
-import '../../../data/infra/cache/cache_adapter.dart';
+import '../../../data/infra/cache/cache.dart';
 import '../../app_routes.dart';
 
 class SplashController extends GetxController {
@@ -18,14 +18,17 @@ class SplashController extends GetxController {
   }
 
   Future<void> verifyCache() async {
-    Future.delayed(const Duration(seconds: 3)).then((_) async {
-      SystemChrome.setEnabledSystemUIMode(
-        SystemUiMode.manual,
-        overlays: SystemUiOverlay.values,
-      );
-      ThemeMode themeMode = await CacheAdapter().getTheme();
+    bool isLogged = await CacheAdapter().read(CacheString.authTokenKey) != null;
+    ThemeMode themeMode = await CacheAdapter().getTheme();
+    Get.changeThemeMode(themeMode);
+    SystemChrome.setEnabledSystemUIMode(
+      SystemUiMode.manual,
+      overlays: SystemUiOverlay.values,
+    );
+    if (isLogged) {
+      Get.offAndToNamed(Routes.home);
+    } else {
       Get.offAndToNamed(Routes.onboarding);
-      Get.changeThemeMode(themeMode);
-    });
+    }
   }
 }

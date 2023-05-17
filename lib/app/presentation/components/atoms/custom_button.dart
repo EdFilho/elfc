@@ -27,7 +27,7 @@ class CustomButtom extends StatelessWidget {
       case 'confirm':
         break;
       case 'seccond':
-        backgroundColor = context.theme.scaffoldBackgroundColor;
+        backgroundColor = Colors.transparent;
         break;
       case 'delete':
         backgroundColor = context.theme.colorScheme.error;
@@ -40,6 +40,7 @@ class CustomButtom extends StatelessWidget {
       style: ElevatedButton.styleFrom(
         minimumSize: Size(Get.width, small ? 36 : 54),
         backgroundColor: backgroundColor,
+        shadowColor: Colors.transparent,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(8),
         ),
