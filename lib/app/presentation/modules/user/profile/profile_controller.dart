@@ -1,22 +1,37 @@
-import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../../../data/infra/cache/cache_adapter.dart';
-import '../../../../data/infra/cache/cache_string.dart';
+import '../../../../domain/entities/entities.dart';
+import '../../../../domain/usecases/usecases.dart';
 import '../../../app_routes.dart';
+import '../../../controllers/controllers.dart';
 
 class ProfileController extends GetxController {
-  void toSettings() {
-    Get.toNamed(Routes.editProfile);
+  final MeUsecase meUsecase;
+  final AuthController authController;
+
+  ProfileController({
+    required this.meUsecase,
+    required this.authController,
+  });
+
+  RxBool isLoading = false.obs;
+  Rx<UserEntity>? user;
+
+  @override
+  Future<void> onInit() async {
+    await getUser();
+    super.onInit();
   }
 
-  Future<void> changeThemeMode() async {
-    if (Get.isDarkMode) {
-      await CacheAdapter().writeStorage(CacheString.themeModeKey, "light");
-      Get.changeThemeMode(ThemeMode.light);
-    } else {
-      await CacheAdapter().writeStorage(CacheString.themeModeKey, "dark");
-      Get.changeThemeMode(ThemeMode.dark);
+  Future<void> getUser() async {
+    isLoading.toggle();
+    UserEntity? tempUser = await meUsecase.call();
+    if (tempUser != null) {
+      print('props => ${tempUser.props}');
     }
+  }
+
+  void toSettings() {
+    Get.toNamed(Routes.editProfile);
   }
 }

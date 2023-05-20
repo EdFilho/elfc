@@ -54,6 +54,7 @@ class HomePage extends GetView<HomeController> {
               ),
               BottomNavigationBarItem(
                 icon: ImageProfile(
+                  selected: false,
                   size: 32,
                 ),
                 activeIcon: ImageProfile(

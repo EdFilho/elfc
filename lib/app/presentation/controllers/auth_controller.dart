@@ -9,11 +9,19 @@ import '../../domain/entities/entities.dart';
 class AuthController extends GetxController {
   @override
   Future<void> onInit() async {
+    print('====> ON INIT <====');
     await getUser();
     super.onInit();
   }
 
-  Rx<AccountEntity>? account;
+  Rx<AccountEntity> account = const AccountEntity(
+    id: '',
+    name: '',
+    email: '',
+    phoneNumber: '',
+    role: '',
+    isEmailConfirmed: false,
+  ).obs;
 
   Future<void> setAccount(AccountEntity newUser) async {
     AccountModel accountModel = AccountModel(
@@ -26,15 +34,16 @@ class AuthController extends GetxController {
       profileImageUrl: newUser.profileImageUrl,
     );
     await CacheAdapter().writeStorage(
-      CacheString.userKey,
+      CacheString.accountKey,
       jsonEncode(accountModel.toJson()),
     );
   }
 
   Future<void> getUser() async {
-    var accountJson = await CacheAdapter().read(CacheString.userKey);
+    String? accountJson = await CacheAdapter().read(CacheString.accountKey);
     if (accountJson != null) {
-      account?.value = AccountModel.fromJson(json.decode(accountJson)).toEntity();
+      AccountModel modelAccount = AccountModel.fromJson(json.decode(accountJson));
+      account.value = modelAccount.toEntity();
     }
   }
 }

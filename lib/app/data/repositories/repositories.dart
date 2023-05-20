@@ -1,1 +1,1 @@
-export './auth/login_repository.dart';
+export './auth/auth.dart';

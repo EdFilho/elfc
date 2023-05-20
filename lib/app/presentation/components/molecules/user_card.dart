@@ -32,15 +32,10 @@ class UserCard extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              CircleAvatar(
-                radius: 36.0,
-                backgroundColor: Theme.of(context).colorScheme.primary,
-                child: const CircleAvatar(
-                  radius: 34.0,
-                  backgroundImage: AssetImage(
-                    "assets/images/user.png",
-                  ),
-                ),
+              const ImageProfile(
+                size: 64,
+                bordered: true,
+                withBackground: true,
               ),
               Text(
                 userName,

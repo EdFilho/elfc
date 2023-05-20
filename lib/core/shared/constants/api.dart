@@ -7,4 +7,5 @@ class Api {
 
   // Auth
   static const login = 'auth/login';
+  static const me = 'auth/me';
 }

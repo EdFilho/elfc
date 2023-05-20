@@ -3,9 +3,9 @@ import 'package:get/get.dart';
 
 import '../../../../../../core/theme/themes.dart';
 import '../../../../components/components.dart';
-import '../../../home/home_controller.dart';
+import '../feed.dart';
 
-class NewPost extends GetView<HomeController> {
+class NewPost extends GetView<FeedController> {
   const NewPost({super.key});
 
   @override
@@ -32,9 +32,10 @@ class NewPost extends GetView<HomeController> {
       ),
       child: Row(
         children: [
-          const CircleAvatar(
-            radius: 32.0,
-            backgroundImage: AssetImage("assets/images/user.png"),
+          const ImageProfile(
+            withBackground: true,
+            bordered: true,
+            size: 64,
           ),
           const SizedBox(width: 16),
           Text(

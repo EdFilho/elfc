@@ -17,7 +17,7 @@ class ProfilePage extends GetView<ProfileController> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             UserCard(
-              userName: "Pedro Ramon",
+              userName: controller.authController.account.value.name,
               createdAt: "2",
               settings: () => Get.toNamed(Routes.profileSettings),
             ),

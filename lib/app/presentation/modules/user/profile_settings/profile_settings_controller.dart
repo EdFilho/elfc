@@ -21,7 +21,7 @@ class ProfileSettingsController extends GetxController {
     if (logout != null) {
       if (logout) {
         CacheAdapter().delete(CacheString.authTokenKey);
-        CacheAdapter().delete(CacheString.userKey);
+        CacheAdapter().delete(CacheString.accountKey);
         Get.offAllNamed(Routes.initial);
       }
     }
