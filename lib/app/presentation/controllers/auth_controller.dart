@@ -9,7 +9,6 @@ import '../../domain/entities/entities.dart';
 class AuthController extends GetxController {
   @override
   Future<void> onInit() async {
-    print('====> ON INIT <====');
     await getUser();
     super.onInit();
   }

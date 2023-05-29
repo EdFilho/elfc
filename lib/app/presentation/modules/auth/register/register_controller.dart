@@ -1,19 +1,36 @@
-import 'package:elfc/app/presentation/modules/auth/register/components/steps/personal_data.dart';
-import 'package:elfc/app/presentation/modules/auth/register/components/steps/profile_image.dart';
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'dart:math';
 
-import 'components/steps/email_and_password.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:get/get.dart';
+import 'package:image_cropper/image_cropper.dart';
+import 'package:image_picker/image_picker.dart';
+
+import '../../../../../core/shared/utilities/helppers.dart';
+import '../../../app_routes.dart';
+import '../../../components/organisms/select_image_bottom_sheet.dart';
+import 'components/steps/steps.dart';
 
 class RegisterController extends GetxController {
   RxInt indexScreen = 0.obs;
 
   Rx<TextEditingController> emailController = TextEditingController().obs;
   Rx<TextEditingController> passwordController = TextEditingController().obs;
+  Rx<TextEditingController> nameController = TextEditingController().obs;
+  Rx<TextEditingController> lastNameController = TextEditingController().obs;
   Rx<TextEditingController> birthdayDate = TextEditingController().obs;
+
   Rx<DateTime> birthDay = DateTime.now().obs;
-  RxList<String> genders = ['masc', 'fem'].obs;
+  RxList<String> genders = ['masc', 'fem', 'outro'].obs;
   Rx<String> selectedGender = 'masc'.obs;
+
+  RxBool withImage = false.obs;
+  Rx<Uint8List> imageAsByte =
+      Uint8List.fromList(List<int>.generate(1024 * 1024, (_) => Random().nextInt(256))).obs;
+  final ImagePicker picker = ImagePicker();
+
+  final emailAndPassKey = GlobalKey<FormState>().obs;
+  final personalDataKey = GlobalKey<FormState>().obs;
 
   RxList<Widget> steps = [
     const EmailAndPassword(),
@@ -30,11 +47,19 @@ class RegisterController extends GetxController {
   }
 
   void register() {
-    setScreen(1);
+    if (emailAndPassKey.value.currentState != null) {
+      if (emailAndPassKey.value.currentState!.validate()) {
+        setScreen(1);
+      }
+    }
   }
 
   void saveUserData() {
-    setScreen(2);
+    if (personalDataKey.value.currentState != null) {
+      if (personalDataKey.value.currentState!.validate()) {
+        setScreen(2);
+      }
+    }
   }
 
   void back() {
@@ -42,6 +67,39 @@ class RegisterController extends GetxController {
       Get.back();
     } else {
       setScreen(indexScreen.value - 1);
+    }
+  }
+
+  void skip() {
+    Get.offAndToNamed(Routes.home);
+  }
+
+  Future<void> selectImageType(BuildContext context) async {
+    showModalBottomSheet(
+      showDragHandle: true,
+      context: context,
+      builder: (BuildContext context) {
+        return SelecteImageBottomSheet(
+          getImageCamera: () => uploadImageProfile(ImageSource.camera),
+          getImageGallery: () => uploadImageProfile(ImageSource.gallery),
+        );
+      },
+    );
+  }
+
+  Future<void> uploadImageProfile(ImageSource imageSource) async {
+    XFile? pickedImage = await picker.pickImage(source: imageSource);
+    if (pickedImage != null) {
+      final croppedImage = await ImageCropper().cropImage(
+        sourcePath: pickedImage.path,
+        aspectRatio: const CropAspectRatio(ratioX: 1, ratioY: 1),
+      );
+
+      if (croppedImage != null) {
+        imageAsByte.value = await croppedImage.readAsBytes();
+        withImage.value = true;
+        Get.back();
+      }
     }
   }
 
@@ -54,6 +112,7 @@ class RegisterController extends GetxController {
     );
     if (picked != null && picked != birthDay.value) {
       birthDay.value = picked;
+      birthdayDate.value.text = dateFormatter(picked);
     }
   }
 }

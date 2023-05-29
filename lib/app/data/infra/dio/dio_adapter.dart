@@ -88,6 +88,8 @@ class DioAdapter implements IHttpClient {
         throw HttpError.unauthorized;
       case 404:
         throw HttpError.notFound;
+      case 409:
+        throw HttpError.unauthorized;
       default:
         throw HttpError.serverError;
     }

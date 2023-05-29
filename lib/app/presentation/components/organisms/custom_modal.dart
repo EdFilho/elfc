@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../../../core/shared/enums/buttom_type.dart';
 import '../components.dart';
 
 class CustomModal {
@@ -24,7 +25,7 @@ class CustomModal {
               Expanded(
                 child: CustomButtom(
                   small: true,
-                  type: 'seccond',
+                  type: ButtonType.seccond,
                   label: 'Cancelar',
                   onTap: () => Get.back(result: false),
                 ),

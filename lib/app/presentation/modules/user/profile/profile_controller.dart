@@ -27,7 +27,7 @@ class ProfileController extends GetxController {
     isLoading.toggle();
     UserEntity? tempUser = await meUsecase.call();
     if (tempUser != null) {
-      print('props => ${tempUser.props}');
+      // print('props => ${tempUser.props}');
     }
   }
 

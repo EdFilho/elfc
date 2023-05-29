@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../../../../core/shared/enums/enums.dart';
 import '../../../components/components.dart';
 import 'onboarding_controller.dart';
 
@@ -40,7 +41,7 @@ class OnboardingPage extends GetView<OnboardingController> {
               CustomButtom(
                 onTap: controller.toRegister,
                 label: 'Cadastrar-se',
-                type: 'seccond',
+                type: ButtonType.seccond,
               ),
             ],
           ),

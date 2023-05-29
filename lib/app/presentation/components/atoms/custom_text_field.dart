@@ -2,10 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 class CustomTextField extends StatelessWidget {
+  final GlobalKey<FormState>? formKey;
   final TextEditingController controller;
   final String label;
+  final String? hintText;
   final Function(String)? onSubmitted;
   final Function(String)? onChage;
+  final String? Function(String?)? validator;
   final TextInputType? keyboardType;
   final FocusNode? focusNode;
   final bool obscureText;
@@ -17,8 +20,11 @@ class CustomTextField extends StatelessWidget {
     super.key,
     required this.controller,
     required this.label,
+    this.hintText,
+    this.formKey,
     this.onSubmitted,
     this.onChage,
+    this.validator,
     this.keyboardType = TextInputType.text,
     this.focusNode,
     this.maskFormatter,
@@ -32,8 +38,10 @@ class CustomTextField extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.only(top: 15),
       child: TextFormField(
+        key: formKey,
         decoration: InputDecoration(
           labelText: label,
+          hintText: hintText,
           isDense: true,
           suffixIcon: suffixIcon,
         ),
@@ -46,6 +54,7 @@ class CustomTextField extends StatelessWidget {
         keyboardType: keyboardType,
         onFieldSubmitted: onSubmitted,
         onChanged: onChage,
+        validator: validator,
       ),
     );
   }

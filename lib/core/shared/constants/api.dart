@@ -8,4 +8,8 @@ class Api {
   // Auth
   static const login = 'auth/login';
   static const me = 'auth/me';
+  static const imageProfile = 'auth/upload-image-profile';
+
+  // user
+  static const users = 'users';
 }
